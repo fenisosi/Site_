@@ -36,7 +36,7 @@
             <nav class="nav">
                 <ul>
                     <li>
-                        <a href="/#" class="pai_do_bunito"><button class="bunito">Henrique</button></a>
+                        <a href="/#contato" class="pai_do_bunito"><button class="bunito">Henrique</button></a>
                     </li>
                     <li>
                         <p class="menu"><img src="./imagens/Menu.png"></p>
@@ -60,7 +60,7 @@
                     </li>
                     <br>
                     <li>
-                        <a href="/#editor">Notas</a>
+                        <a href="/#editor" class="Notas">Notas</a>
                     </li>
                     </nada>
                 </ul>
@@ -115,7 +115,7 @@
         <div class="btn-cookies"> Aceitar!</div>
     </div>
         <footer class="footer">
-            <center><p>Contato: <a href="https://discord.gg/CC4ZnXXKDe" target="blank">Discord</a><p></center>
+            <center><p><a href="/#editor">Use Nosso Editor Online</a></p></center>
         </footer>
     <!--Fim Do Footer-->
     </div>
@@ -131,6 +131,8 @@
         import data from "./src/pages/data.js"
         import priv from "./src/pages/priv.js"
         import editor from "./src/pages/editor.js"
+        import contato from "./src/pages/contato.js"
+
 
 
         const main = document.querySelector('#root')
@@ -140,6 +142,7 @@
         const init = () => {
             window.addEventListener("hashchange", () => {
                 main.innerHTML = ""
+                document.querySelector("footer").innerHTML = `<center><p><a href="/#editor">Use Nosso Editor Online</a></p></center>`
                 switch(window.location.hash.split("?")[0]){
                     case "":
                         main.appendChild(home(profile?profile.getName().toLowerCase():"Querido Leitor"));
@@ -164,6 +167,9 @@
                         break;
                     case "#priv":
                         main.appendChild(priv())
+                        break;
+                    case "#contato":
+                        main.appendChild(contato());
                         break;
                     case "#editor":
                         main.appendChild(editor())
@@ -228,6 +234,12 @@
                             const previu = document.querySelector('.previu')
                             previu.innerHTML = textarea.value
                         })
+                        document.addEventListener("mousemove", () => {
+                            const previu = document.querySelector('.previu')
+                            previu.innerHTML = textarea.value
+                        })
+                        document.querySelector("footer").innerHTML = `<center><p>Apague Tudo Para Remover! Javascript Desabilitado</p></center>`
+
                         break;
                     default:
                         main.appendChild(pg404(window.location.hash.split("#")[1]));

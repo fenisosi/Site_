@@ -289,3 +289,11 @@ footer {
         background-position: 0% 50%;
     }
 }
+#wrapper .nav-pills a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#root {
+    padding-left: 20px;
+}
