@@ -6,17 +6,16 @@ export default () => {
         return subst;
     }
     var template = `
-    <div id="app" >
+    <div id="app">
     <div id="wrapper">
         <div>
         
             <ul>
-                    <li><a href= "" class="nav-link" @click.prevent="create()">Nova anotaçao</a></li>
-                    <li v-for="note, index in notes">
-                        <a href= ""  @click.prevent="select(index)">{{  note.content  }}</a>
-                    </li>
-                    
-                </ul>
+                <li><a href= "" class="nav-link" @click.prevent="create()">Nova anotaçao</a></li>
+                <li v-for="note, index in notes">
+                    <a href= ""  @click.prevent="select(index)">{{  note.content  }}</a>
+                </li>
+            </ul>
         </div>
         <br>
     </div>
