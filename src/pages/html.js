@@ -25,6 +25,7 @@ export default () => {
     <h1>Ultra Basicos</h1>\
     ${string}  
     <p>Se Tiver Vs Code Crie Um Documento Em Branco Html E Digite "!" Para Obter Um Resultado Semelhante!</p>
+    <p>Caso Não Tenha Um Editor De Texto Clique <a href="/#editor">Aqui</a> Para Usar O Nosso!</p>
     <p>Clique Duas Vezes Sobre Seu Arquivo E Pronto Seu Site Está Ótimo Mas Sem Host Bom Isso Ensinarei Amanha Dia 11/02/2021 (obg: Esta Aula Não Sera Deletada!)</p>
     <br>
     <h1>HOST</h1>

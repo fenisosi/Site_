@@ -22,9 +22,13 @@ export default () => {
     <div class="col">
         <textarea @keyup="save()" ref="textarea" placeholder="insira sua anotaçao!" class="content">{{(active !== null) ? notes[active].content  : ''}}</textarea>
     </div>
-</div>
+    <div class="previu">
+    a
+    </div>
+    </div>
     `
     container.innerHTML = template;
+
 
     return container;
     

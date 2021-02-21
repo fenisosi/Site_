@@ -223,7 +223,11 @@
                                 this.notes = JSON.parse(notes)
                             }
                         })
-                        CKEDITOR.replace('content')
+                        const textarea = document.querySelector('textarea')
+                        textarea.addEventListener("keyup", () => {
+                            const previu = document.querySelector('.previu')
+                            previu.innerHTML = textarea.value
+                        })
                         break;
                     default:
                         main.appendChild(pg404(window.location.hash.split("#")[1]));
