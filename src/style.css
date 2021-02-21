@@ -244,13 +244,39 @@ footer {
 }
 .bunito {
     background: #C33764;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-size: 300%;
-    animation: bunitoKey 3s infinite;
+    background: -webkit-linear-gradient(to left, #000, #2f3781, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #000, #2f3781, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: 400%;
+    animation: bunitoKey 2.5s infinite;
 
 }
-
+.bunito:hover {
+    animation: rodar 5s ease;
+}
+@keyframes rodar {
+    0% {
+        transform: rotate(0deg);
+        background-position: 0% 50%;
+    }
+    5% {
+        transform: rotate(45deg);
+    }
+    25% {
+        transform: rotate(0deg);
+    }
+    40% {
+        transform: rotate(-45deg);
+        background-position: 100% 50%;
+        color: #fff;
+    }
+    55% {
+        transform: rotate(-360deg);
+    }
+    60% {
+        transform: rotate(-360deg);
+        background-position: 0% 50%;
+    }
+}
 @keyframes bunitoKey {
     0% {
         background-position: 0% 50%;
