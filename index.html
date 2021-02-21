@@ -120,6 +120,19 @@
     <!--Fim Do Footer-->
     </div>
     <!--Scripts-->
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+        OneSignal.init({
+        appId: "2c97b611-6be0-43c3-9844-c5834095d514",
+        notifyButton: {
+            enable: true,
+        },
+        subdomainName: "henriques-site",
+        });
+    });
+    </script>
     <script type="module">        
         import home from "./src/pages/load.js"
         import aulas from "./src/pages/aulas.js"
