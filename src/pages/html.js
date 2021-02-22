@@ -83,6 +83,10 @@ tag {
     <p>Use Atributos Como <nada class="codego">color: white; OU position: fixed; OU backgrond: {cor OU url("URL")};</nada></p>
     <p>Caso Queira Um Documento Mais "Profundo" <a href="https://www.oficinadanet.com.br/artigo/1041/atributos_css">https://www.oficinadanet.com.br/artigo/1041/atributos_css</a></p>
     <br>
+    <h1>Javascript</h1>
+    <p>Javascript Não é Uma Linguajem Facil Mas é Poderosisima Então Se Quiser Saber O Js Do Meu Site Assista Este Video (Um Video Que Achei Esplicando Masgadamente Como Fazer Um SPA)</p><br>
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hf8x3A1e57Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br>
     <br>
     <br>
     `;

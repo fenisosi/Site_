@@ -251,7 +251,7 @@ footer {
 
 }
 .bunito:hover {
-    animation: rodar 5s ease;
+    animation: rodar 5s ease-in-out infinite;
 }
 @keyframes rodar {
     0% {
@@ -287,8 +287,7 @@ footer {
     }
     80% {
         transform: rotate(-360deg);
-    }
-    
+    }  
 }
 @keyframes bunitoKey {
     0% {
