@@ -13,20 +13,17 @@ export default () => {
             <ul class="nav-pills">
                 <li><a href= "" class="nav-link" @click.prevent="create()">Nova anotaçao</a></li>
                 <li v-for="note, index in notes">
-                    <a href= "" name="mudar" @click.prevent="select(index)">{{  note.content  }}</a>
+                    <a href= "" class="nav-link" name="mudar" @click.prevent="select(index)">{{  note.content  }}</a>
                 </li>
             </ul>
         </div>
         <br>
     </div>
     <div class="col">
-        <button id="codegop">Criar(Resetar Para) Codego Pronto</button>
-        <textarea @keyup="save()" ref="textarea" placeholder="insira sua anotaçao!" class="content">{{(active !== null) ? notes[active].content  : ''}}</textarea>
+        <textarea @keyup="save()" ref="textarea" placeholder="Insira o Conteudo Do Body" class="content">{{(active !== null) ? notes[active].content  : ''}}</textarea>
     </div>
-    <div class="previu">
-    a
-    </div>
-    </div>
+    <iframe src="teste.html" id="CAGADA"></iframe>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br></div>
     `
     container.innerHTML = template;
 

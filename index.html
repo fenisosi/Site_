@@ -232,11 +232,11 @@
                         const textarea = document.querySelector('textarea')
                         textarea.addEventListener("keyup", () => {
                             const previu = document.querySelector('.previu')
-                            previu.innerHTML = textarea.value
+                            localStorage.setItem("Codego-henriques-site", textarea.value)
                         })
                         document.addEventListener("mousemove", () => {
                             const previu = document.querySelector('.previu')
-                            previu.innerHTML = textarea.value
+                            localStorage.setItem("Codego-henriques-site", textarea.value)
                         })
                         document.querySelector("footer").innerHTML = `<center><p>Apague Tudo Para Remover! Javascript Desabilitado</p></center>`
                         const btn_codego = document.querySelector("#codegop")
