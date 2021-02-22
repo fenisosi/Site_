@@ -12,7 +12,7 @@ export default () => {
 
 
     const template = '\
-    <h1 class="aulas">Esta é a Pagina De Aulas</h1>\
+    <br><h1 class="aulas">Esta é a Pagina De Aulas</h1>\
     <h2 class="materias">Materias:</h2>\
     <p>\
     <a href="/#html" >\

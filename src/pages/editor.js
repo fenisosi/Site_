@@ -13,13 +13,14 @@ export default () => {
             <ul class="nav-pills">
                 <li><a href= "" class="nav-link" @click.prevent="create()">Nova anotaçao</a></li>
                 <li v-for="note, index in notes">
-                    <a href= ""  @click.prevent="select(index)">{{  note.content  }}</a>
+                    <a href= "" name="mudar" @click.prevent="select(index)">{{  note.content  }}</a>
                 </li>
             </ul>
         </div>
         <br>
     </div>
     <div class="col">
+        <button id="codegop">Criar(Resetar Para) Codego Pronto</button>
         <textarea @keyup="save()" ref="textarea" placeholder="insira sua anotaçao!" class="content">{{(active !== null) ? notes[active].content  : ''}}</textarea>
     </div>
     <div class="previu">

@@ -15,7 +15,6 @@ export default () => {
     &lttitle&gtMeu Primeiro Programa HTML&lt/title&gt
 &lt/head&gt
 &ltbody&gt
-&ltbody&gt
     &ltscript&gt
     &lt/script&gt
 &lt/body&gt

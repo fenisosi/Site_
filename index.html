@@ -239,7 +239,23 @@
                             previu.innerHTML = textarea.value
                         })
                         document.querySelector("footer").innerHTML = `<center><p>Apague Tudo Para Remover! Javascript Desabilitado</p></center>`
-
+                        const btn_codego = document.querySelector("#codegop")
+                        btn_codego.addEventListener("click", () => {
+                            textarea.value = `&lt!DOCTYPE html&gt
+&lthtml lang='pt-br'&gt
+&lthead&gt
+    &ltmeta charset='UTF-8'&gt
+    &ltmeta name='viewport' content='width=device-width, initial-scale=1.0'&gt
+    &ltstyle&gt
+    &lt/style&gt
+    &lttitle&gtMeu Primeiro Programa HTML&lt/title&gt
+&lt/head&gt
+&ltbody&gt
+    &ltscript&gt
+    &lt/script&gt
+&lt/body&gt
+&lt/html&gt`.replace(/&lt/g, "<").replace(/&gt/g, ">")
+                        });
                         break;
                     default:
                         main.appendChild(pg404(window.location.hash.split("#")[1]));
