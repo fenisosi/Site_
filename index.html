@@ -30,7 +30,14 @@
     </script>
     <title>Site Legalzim</title>
 </head>
-<body>
+<body onload="myFunction()">
+    <div id="loading"><p class="centro">Ative O Javascript E O Css<p></div>
+    <script >
+        var preloader = document.getElementById("loading");
+        function myFunction(){
+			preloader.style.display = 'none';
+		};
+    </script>
     <!--Cabecalho-->
         <header>
             <nav class="nav">
@@ -388,7 +395,7 @@
                 return
             }
         }); 
-    
+        
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
 </body>
