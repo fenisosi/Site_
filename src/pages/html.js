@@ -10,13 +10,13 @@ export default () => {
 &lthead&gt
     &ltmeta charset='UTF-8'&gt
     &ltmeta name='viewport' content='width=device-width, initial-scale=1.0'&gt
-    &ltstyle&gt
-    &lt/style&gt
     &lttitle&gtMeu Primeiro Programa HTML&lt/title&gt
 &lt/head&gt
 &ltbody&gt
     &ltscript&gt
     &lt/script&gt
+    &ltstyle&gt
+    &lt/style&gt
 &lt/body&gt
 &lt/html&gt</pre></div>`
 
