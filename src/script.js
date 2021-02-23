@@ -131,9 +131,6 @@ window.addEventListener("load", () => {
     init()
 });
 
-function reloadHome() {
-    main.appendChild(home(profile?profile.getName().toLowerCase():"Querido Leitor"))
-} 
 const menu = document.querySelector(".menu")
 const opt = document.querySelector("#oopt") 
 menu.addEventListener("click", () => {

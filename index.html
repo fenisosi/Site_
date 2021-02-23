@@ -84,7 +84,17 @@
                     <li>
                         <a href="/#blogs">Blogs</a>
                     </li>
-                    <br>    
+                    <br> 
+                    <ol class="isto ninhuma">
+                        <li><h6><a href="/#luisa" style="color: #fc07db;margin-left: 30px;">
+                            Luisa
+                        </a></h6></li>  
+                        <br>
+                        <li><h6><a href="/#henrique" style="color: #1900ff;margin-left: 30px;">
+                            Henrique
+                        </a></h6></li>  
+                        <br>  
+                    </ol>   
                     <li>
                         <a href="/#data">Data</a>
                     </li>
@@ -93,7 +103,14 @@
                         <a href="/#editor" class="Notas">Notas</a>
                     </li>
                     <br>
-                    <li onclick="document.querySelector('.isto').classList.toggle('ninhuma'); setTimeout(function() {document.querySelector('#oopt').classList.remove('opt')}, 10)">
+                    <li onclick='setTimeout(function () {
+                        document.querySelectorAll(".isto").forEach((a, b, c) => {
+                            a.classList.toggle("ninhuma")
+                            setTimeout(function () {
+                                abrir()
+                            }, 15)
+                        }
+                    )}, 20)'>
                         <a>...</a>
                     </li>
                     <br>
@@ -186,5 +203,18 @@
     </div>
     <!--Scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script>
+        function abrir() {
+            const menu = document.querySelector(".menu")
+            const opt = document.querySelector("#oopt") 
+            $(".menu").css("position", "absolute")
+            $(".g-signin2").css("top", "-40px")
+            $(".parede").css("top", "-40px")
+            
+            menu.classList.add("none")
+            document.querySelector("#oopt").classList.remove("opt")
+            menu.classList.remove("vez")
+        }
+    </script>
 </body>
 </html>
