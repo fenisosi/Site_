@@ -39,7 +39,7 @@
 		};
     </script>
     <!--Cabecalho-->
-        <header>
+        <header class="importante-fixed">
             <nav class="nav">
                 <ul>
                     <li>
@@ -49,7 +49,8 @@
                         <p class="menu"><img src="./imagens/Menu.png"></p>
                     </li>
                     <br>
-                    <nada class="opt">
+                    <nada class="opt" id="oopt">
+                    <br>
                     <li>
                         <a href="/#">Geral</a>
                     </li>
@@ -69,6 +70,11 @@
                     <li>
                         <a href="/#editor" class="Notas">Notas</a>
                     </li>
+                    <br>
+                    <br>
+                    <li><a href="https://discord.gg/44CcvfYNY8" class="link-fab" target="blank"><i class="fab fa-discord"></i></a></li>
+                    <li><a href="" class="link-fab" target="blank"><i class="fab fa-facebook-square"></i></a></li>
+                    <li><a href="" class="link-fab" target="blank"><i class="fab fa-instagram-square"></i></a></li>
                     </nada>
                 </ul>
             </nav>
@@ -115,6 +121,8 @@
     </script>
         <main id="root" class="root">
         </main>
+
+        <espaço-em-branco><br><br><br></espaço-em-branco>
     <!--Fim Dom Main-->
     <!--Footer-->
     <div class="box-cookies hide">
@@ -125,6 +133,25 @@
             <center><p><a href="/#editor">Use Nosso Editor Online</a></p></center>
         </footer>
     <!--Fim Do Footer-->
+    <!--Bnt Top e Scripts Relacionados-->
+    <button id="btn-top" onclick="javascript: ScrollToTop();">⇪</button>
+    <script defer>
+        window.onscroll = function () {
+            scroll();
+        } 
+        function scroll() {
+            const btn = document.getElementById("btn-top")
+            if (document.documentElement.scrollTop > 50) {
+                btn.style.display = "block"
+            } else {
+                btn.style.display = "none" 
+            }
+        }
+        function ScrollToTop() {
+            document.documentElement.scrollTop = 0
+        }
+    </script>
+    <!--Fim Do Btn Top e Scripts Relacionados-->
     </div>
     <!--Scripts-->
     <script type="module">        
@@ -279,44 +306,50 @@
             main.appendChild(home(profile?profile.getName().toLowerCase():"Querido Leitor"))
         } 
         const menu = document.querySelector(".menu")
-        const opt = document.querySelector(".opt") 
+        const opt = document.querySelector("#oopt") 
         menu.addEventListener("click", () => {
             if (menu.classList.contains("none")) {
-                $(".opt").css("display", "none")
+                
                 $(".menu").css("position", "absolute")
-                $(".g-signin2").css("top", "40px")
-                $(".parede").css("top", "45px")
-                $(".opt").css("position", "relative")
+                $(".g-signin2").css("top", "45px")
+                $(".parede").css("top", "50px")
+                
+                document.querySelector("#oopt").classList.add("opt")
                 menu.classList.remove("none")
                 menu.classList.remove("vez")
             } else {
-                $(".opt").css("display", "block")
+                
                 $(".menu").css("position", "absolute")
                 $(".g-signin2").css("top", "-40px")
                 $(".parede").css("top", "-40px")
-                $(".opt").css("position", "relative")
+                
                 menu.classList.add("none")
+                document.querySelector("#oopt").classList.remove("opt")
                 menu.classList.remove("vez")
             }
         })
         opt.addEventListener("click", () => {
-            $(".opt").css("display", "none")
+            document.querySelector("#oopt").classList.toggle("verificar")
+            
             $(".menu").css("position", "absolute")
             $(".g-signin2").css("top", "40px")
             $(".parede").css("top", "45px")
-            $(".opt").css("position", "relative")
+            
             menu.classList.remove("none")
             menu.classList.remove("vez")
+            document.querySelector("#oopt").classList.add("opt")
         })
         document.querySelector("body").addEventListener("click", () => {
             if (menu.classList.contains("none") && menu.classList.contains("vez")) {
-                $(".opt").css("display", "none")
+                document.querySelector("#oopt").classList.remove("verificar")
+                
                 $(".menu").css("position", "absolute")
                 $(".g-signin2").css("top", "40px")
                 $(".parede").css("top", "45px")
-                $(".opt").css("position", "relative")
+                
                 menu.classList.remove("none")
                 menu.classList.remove("vez")
+                document.querySelector("#oopt").classList.add("opt")
             } else {
                 menu.classList.add("vez")
                 return

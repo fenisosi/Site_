@@ -15,9 +15,12 @@ export default (nome) => {
 
 
     const template = `
-    Olá ${capitalizeFirst(nome)}
     <div class="geral">
+        <div class="img">
+          <img src="imagens/bg2.jpg">
+        </div>
         <div class="fundo">
+          Olá ${capitalizeFirst(nome)}
           Aqui Temos Diverços Conteudos Como 2 Blogs e Aulas De Programaçao!<br>
           Para Acessar As Aulas Vá Na Aba Aulas Ou Clique <a href="/#aulas" style="text-decoration: underline; color: red;">Aqui</a><br>
           Para Acessar O Blog Dá Luisa Clique <a href="/#luisa" style="text-decoration: underline; color: red;">Aqui</a><br> 

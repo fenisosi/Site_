@@ -85,7 +85,7 @@ tag {
     <br>
     <h1>Javascript</h1>
     <p>Javascript Não é Uma Linguajem Facil Mas é Poderosisima Então Se Quiser Saber O Js Do Meu Site Assista Este Video (Um Video Que Achei Esplicando Masgadamente Como Fazer Um SPA)</p><br>
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hf8x3A1e57Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/hf8x3A1e57Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="yt"></iframe>
     <br>
     <br>
     <br>

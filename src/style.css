@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css');
 *{
     margin: auto;
     border-radius: 5px; 
     font-family: 'Amatic SC', cursive;
+}
+html {
+    scroll-behavior: smooth;
 }
 body {
     width: 100%;
@@ -61,6 +65,10 @@ a {
     background: white;
     display: none;
 }
+.root {
+    margin-top: 50px;
+    margin-bottom: 45px;
+}
 .nav {
     position: fixed;
     margin-top: 0px;
@@ -70,21 +78,18 @@ a {
     -moz-box-shadow: 10px 3px 5px #777;
     -webkit-box-shadow: 10px 3px 5px #777;
     width: 100%;
-    margin-bottom: 20px;
-}
-.root {
-    margin-top: 50px;
-    margin-bottom: 45px;
+    z-index: 100;
 }
 footer {
     position: fixed;
     width: 100%;
     bottom: 0px;
-    background-color: white;
+    background-color: whitesmoke;
     margin-bottom: 0px;
     box-shadow: -4px -8px 6px -5px #777;
 	-moz-box-shadow: -4px -8px 6px -5px #777;
 	-webkit-box-shadow: -4px -8px 6px -5px #777;
+    border-radius: 0;
 }
 .nav ul li {
      display: inline-block; 
@@ -105,6 +110,10 @@ footer {
     color: #333;
     text-decoration: none;
     border-bottom:3px solid #EDEDED;
+    transition: color 1s;
+}
+.nav ul li a:hover {
+    color: rgb(149, 9, 214);
 }
 .materias {
     margin-bottom: 10px;
@@ -135,19 +144,21 @@ footer {
     color: rgb(248, 66, 66);
 }
 .g-signin2 {
-    top: 40px;  
+    top: 45px;  
     position: absolute;
     margin-bottom: 0px;
     right: 10px;
     position: fixed;
     display: block;
     margin: auto;
+    z-index: 100;
     text-decoration: none;
 }
 .parede {  
-    top: 45px;  
+    top: 50px;  
     position: absolute;
     display: none;
+    z-index: 100;
     margin-bottom: 0px;
     right: 35px;
     position: fixed;
@@ -160,8 +171,9 @@ footer {
     right: 10px;
 
 }
-.opt {
-    display: none;
+.nav .opt {
+    position: absolute;
+    top: -30rem;
 }
 .menu a:hover{
     transition: 1s;
@@ -278,6 +290,8 @@ footer {
     }
     64% {
         color: #000;
+        background-position: 100% 50%;
+        color: #fff;
     }
     65% {
         transform: scale(0);
@@ -287,6 +301,7 @@ footer {
     }
     80% {
         transform: rotate(-360deg);
+        background-position: 0% 50%;
     }  
 }
 @keyframes bunitoKey {
@@ -340,4 +355,62 @@ a:hover {
 .centro {
     padding-top: 50vh;
     text-align: center;
+}
+.yt {
+    width: 100%;
+    height: 18.5rem;
+}
+.img {
+    width: 100%;
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.img img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    object-fit: cover;
+}
+.geral {
+    position: relative;
+}
+.fundo {
+    position: absolute;
+    top: 100px;
+    left: 15px;
+    color: #fff;
+    animation: zoom 3s;
+}
+@keyframes zoom {
+    0% {
+      transform: translateY(-50rem); 
+      color:black; 
+    }
+    80% {
+        transform: rotateY(-30deg);
+    }
+    100% {
+        transform: translateY(0) rotateY(0);
+    }
+}
+
+espaço-em-branco {
+    background-color: #fff;
+    width: 100%;
+    height: 50vh;
+    color: #fff;
+    font-size: 50px;
+}
+#btn-top {
+    position: fixed;
+    z-index: 100;
+    right: 10px;
+    bottom: 30px;
+    font-size: 1.7rem;
+    cursor: pointer;
+    display: none;
+}
+#btn-top:hover {
+    background: rgb(149, 9, 214);
+    color: #fff;
 }
