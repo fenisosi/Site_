@@ -25,10 +25,19 @@ export default (nome) => {
           Para Acessar As Aulas Vá Na Aba Aulas Ou Clique <a href="/#aulas" style="text-decoration: underline; color: red;">Aqui</a><br>
           Para Acessar O Blog Dá Luisa Clique <a href="/#luisa" style="text-decoration: underline; color: red;">Aqui</a><br> 
           Para Acessar O Blog Do Hennrique Clique <a href="/#henrique" style="text-decoration: underline; color: red;">Aqui</a>
+          <p>Veja Abaixo Os Projetos:</p>
         </div>
+      </div>
+        <figure class="img-legenda" height="300px" width="300px">
+              <img src="./imagens/html-css-javascript.jpg" alt="Navegador Incompativel :(">
+              <figcaption>
+                Este Próprio Site Foi Construido Com Html, Css, Javascript!<br>
+                Vou Encinar Como Fazer Um Parecido Na Aula De HTML, CSS<br>Fique Ligado Para Ver As Novidades!
+              <figcaption>
+        <figure>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <p>Direitos Autorais:</p>
-        <div>Ícone <img src="./imagens/Menu.png"> feito por <a href="https://www.freepik.com" title="Freepik" target="blank">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon" target="blank">www.flaticon.com</a></div>
+        <div>Ícone <img src="./imagens/Menu.png"> feito por <a href="https://www.freepik.com" title="Freepik" target="blank">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon" target="blank">www.flaticon.com</a>
         <br><br><br>
     `;
 
