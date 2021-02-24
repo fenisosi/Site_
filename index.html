@@ -140,6 +140,7 @@
     <div id="mudar"></div>
     <div class="body2">
     <!--Main-->
+
     <a href="#" class="g-signin2" data-onsuccess="onSignIn"></a>
     <script>
         let profile;
@@ -160,6 +161,17 @@
             window.location.hash = ""
             localStorage.setItem("henriques_site_profile", profile)
             localStorage.setItem("henriques_site_profile_name", profile.getName())
+            if (localStorage.henriques_site_usuario != true) {
+                let popup = document.getElementsByClassName("popup")[0]
+                localStorage.setItem("henriques_site_usuario", true)
+                popup.innerHTML = `<center><p>Bem Vindo De Volta ${profile.getName()}</p></center>`
+                popup.style.display = "block"
+                document.addEventListener("click", () => {
+                    popup.style.display = "none"
+                })
+            }
+            
+
         }
         
         
