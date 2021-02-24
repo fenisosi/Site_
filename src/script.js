@@ -256,3 +256,9 @@ btnCookies.addEventListener('click', () => {
     }
 });
 
+document.getElementById("fonte_normal").addEventListener("click", () => {
+    document.getElementById("html").style.fontFamily = "arial"
+})
+document.getElementById("fonte_curvada").addEventListener("click", () => {
+    document.getElementById("html").style.fontFamily = "cursive"
+})
