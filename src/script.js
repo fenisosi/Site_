@@ -127,7 +127,7 @@ const init = () => {
 }
 
 window.addEventListener("load", () => {
-    main.appendChild(home(profile?profile_name.toLowerCase():"Querido Leitor"));
+    main.appendChild(home(profile_name?profile_name.toLowerCase():"Querido Leitor"));
     window.location.hash = ""; 
     init()
 });
