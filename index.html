@@ -164,7 +164,7 @@
                 localStorage.setItem("henriques_site_usuario", true)
             } else {
                 let popup = document.getElementsByClassName("popup")[0]
-                popup.innerHTML = `<center><p class="popup">Bem Vindo De Volta ${profile.getName()}</p></center>`
+                popup.innerHTML = `<center class="popup"><p class="popup">Bem Vindo De Volta ${profile.getName()}</p></center>`
                 popup.style.display = "block"
                 document.addEventListener("click", () => {
                     popup.style.display = "none"
