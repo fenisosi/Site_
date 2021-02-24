@@ -158,14 +158,15 @@
             console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
             setTimeout(function () {
+                profile = null
                 window.location.hash = "#null"
                 window.location.hash = ""
                 localStorage.setItem("henriques_site_profile", profile)
                 localStorage.setItem("henriques_site_profile_name", profile.getName())
-                if (localStorage.henriques_site_usuario != true) {
-                    let popup = document.getElementsByClassName("popup")[0]
+                if (localStorage.henriques_site_usuario == undefined) {
                     localStorage.setItem("henriques_site_usuario", true)
                 } else {
+                    let popup = document.getElementsByClassName("popup")[0]
                     popup.innerHTML = `<center><p>Bem Vindo De Volta ${profile.getName()}</p></center>`
                     popup.style.display = "block"
                     document.addEventListener("click", () => {
