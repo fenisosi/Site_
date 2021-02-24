@@ -64,8 +64,9 @@ a {
     height: 180px;
     padding: 15px;
     border: solid 2px black;
-    background: #fbfbfb;
+    background: rgba(248, 66, 66, 0.5);
     display: none;
+    z-index: 99999999999999999999;
 }
 .root {
     margin-top: 50px;
