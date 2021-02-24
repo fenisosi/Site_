@@ -262,3 +262,15 @@ document.getElementById("fonte_normal").addEventListener("click", () => {
 document.getElementById("fonte_curvada").addEventListener("click", () => {
     document.getElementById("html").style.fontFamily = "'Amatic SC', cursive"
 })
+let saindo = false
+document.addEventListener("mouseleave", () => {
+    if (saindo != true) {
+        let popup = document.getElementsByClassName("popup")[0]
+        popup.innerHTML = `<center class="popup"><p class="popup">Já Está Saindo?!</p></center>`
+        popup.style.display = "block"
+        document.addEventListener("click", () => {
+            popup.style.display = "none"
+        })
+        saindo = true
+    }
+})
