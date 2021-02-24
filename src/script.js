@@ -1,4 +1,5 @@
 var profile = localStorage.henriques_site_profile;
+var profile_name = localStorage.henriques_site_profile_name;
 
 import home from "./pages/load.js"
 import aulas from "./pages/aulas.js"
@@ -24,7 +25,7 @@ const init = () => {
         document.querySelector("footer").innerHTML = `<center><p><a href="/#editor">Use Nosso Editor Online</a></p></center>`
         switch(window.location.hash.split("?")[0]){
             case "":
-                main.appendChild(home(profile?profile.getName().toLowerCase():"Querido Leitor"));
+                main.appendChild(home(profile?profile_name.toLowerCase():"Querido Leitor"));
                 break;
             case "#aulas":
                 main.appendChild(aulas());
@@ -126,7 +127,7 @@ const init = () => {
 }
 
 window.addEventListener("load", () => {
-    main.appendChild(home(profile?profile.getName().toLowerCase():"Querido Leitor"));
+    main.appendChild(home(profile?profile_name.toLowerCase():"Querido Leitor"));
     window.location.hash = ""; 
     init()
 });
