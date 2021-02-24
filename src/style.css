@@ -166,6 +166,7 @@ footer {
     position: fixed;
     text-decoration: none;
     background: #EDEDED;
+    border: 8px solid white;
 }
 .menu {
     cursor: pointer;
