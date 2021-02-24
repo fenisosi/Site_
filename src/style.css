@@ -185,7 +185,7 @@ footer {
     width: 300px;
     padding: 15px;
     border: solid 2px black;
-    background: rgba(187, 12, 12, 0.4 );
+    background-color: rgba(187, 12, 12, 0.4 );
 }
 .img-circle {
     border-radius: 50%;
@@ -464,7 +464,7 @@ figure.img-legenda:hover figcaption{
     height: 180px;
     display: none;
     align-items: center;
-    background-color: white;
+    background: white;
 }
 .teste p {
     margin: auto;
