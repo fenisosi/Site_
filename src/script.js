@@ -266,7 +266,7 @@ let saindo = false
 document.addEventListener("mouseleave", () => {
     if (saindo != true) {
         let popup = document.getElementsByClassName("popup")[0]
-        popup.innerHTML = `<center class="popup"><p class="popup">Já Está Saindo?!</p></center>`
+        popup.innerHTML = `<center class="popup"><p class="popup">Já Está Saindo?!<br>Vai Perder A Melhor Parte!</p></center>`
         popup.style.display = "block"
         document.addEventListener("click", () => {
             popup.style.display = "none"
