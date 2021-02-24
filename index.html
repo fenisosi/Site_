@@ -162,6 +162,12 @@
             localStorage.setItem("henriques_site_profile_name", profile.getName())
             if (localStorage.henriques_site_usuario == undefined) {
                 localStorage.setItem("henriques_site_usuario", true)
+                let popup = document.getElementsByClassName("popup")[0]
+                popup.innerHTML = `<center class="popup"><p class="popup">Bem Vindo ${profile.getName()}</p></center>`
+                popup.style.display = "block"
+                document.addEventListener("click", () => {
+                    popup.style.display = "none"
+                })
             } else {
                 let popup = document.getElementsByClassName("popup")[0]
                 popup.innerHTML = `<center class="popup"><p class="popup">Bem Vindo De Volta ${profile.getName()}</p></center>`
@@ -192,6 +198,12 @@
             window.location.hash = "#null"
             window.location.hash = ""
             localStorage.setItem("henriques_site_profile", profile)
+            let popup = document.getElementsByClassName("popup")[0]
+            popup.innerHTML = `<center class="popup"><p class="popup">Thau ${localStorage.henriques_site_profile_name}!</p></center>`
+            popup.style.display = "block"
+            document.addEventListener("click", () => {
+                popup.style.display = "none"
+            })
           });
         }
     </script>
