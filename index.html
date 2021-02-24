@@ -195,6 +195,8 @@
             $(".g-signin2").css("display", "block")
             $(".parede").css("display", "none")
             profile = null
+            localStorage.setItem("henriques_site_profile", profile)
+            localStorage.setItem("henriques_site_profile_name", profile.getName())
             window.location.hash = "#null"
             window.location.hash = ""
             localStorage.setItem("henriques_site_profile", profile)
