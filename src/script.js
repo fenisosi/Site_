@@ -25,7 +25,7 @@ const init = () => {
         document.querySelector("footer").innerHTML = `<center><p><a href="/#editor">Use Nosso Editor Online</a></p></center>`
         switch(window.location.hash.split("?")[0]){
             case "":
-                main.appendChild(home(profile?profile_name.toLowerCase():"Querido Leitor"));
+                main.appendChild(home(profile != null?profile_name.toLowerCase():"Querido Leitor"));
                 break;
             case "#aulas":
                 main.appendChild(aulas());
