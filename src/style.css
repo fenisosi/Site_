@@ -167,7 +167,7 @@ footer {
     position: fixed;
     text-decoration: none;
     background: #EDEDED;
-    border: 8px solid white;
+    border: 8px solid #EDEDED;
     box-shadow: 0.2rem 0.2rem 4px black;
 }
 .menu {
