@@ -56,17 +56,13 @@ a {
     text-decoration: underline;
 };
 .popup {
-    position: fixed;
     top: 0px; bottom: 0px;
     left: 0px; right: 0px;
     margin: auto;
     width: 300px;
-    height: 180px;
     padding: 15px;
     border: solid 2px black;
-    background: rgba(248, 66, 66, 0.5);
-    display: none;
-    z-index: 99999999999999999999;
+    background-color: rgba(187, 12, 12, 0.4 );
 }
 .root {
     margin-top: 50px;
