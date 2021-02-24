@@ -140,7 +140,6 @@
     <div id="mudar"></div>
     <div class="body2">
     <!--Main-->
-    <div class="popup"></div>
     <a href="#" class="g-signin2" data-onsuccess="onSignIn"></a>
     <script>
         let profile;
@@ -165,7 +164,7 @@
                 localStorage.setItem("henriques_site_usuario", true)
             } else {
                 let popup = document.getElementsByClassName("popup")[0]
-                popup.innerHTML = `<center><p>Bem Vindo De Volta ${profile.getName()}</p></center>`
+                popup.innerHTML = `<center><p class="popup">Bem Vindo De Volta ${profile.getName()}</p></center>`
                 popup.style.display = "block"
                 document.addEventListener("click", () => {
                     popup.style.display = "none"
@@ -209,6 +208,7 @@
         <footer class="footer">
             <center><p><a href="/#editor">Use Nosso Editor Online</a></p></center>
         </footer>
+    <div class="popup"></div>
     <!--Fim Do Footer-->
     <!--Bnt Top e Scripts Relacionados-->
     <button id="btn-top" onclick="javascript: ScrollToTop();">⇪</button>
