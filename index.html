@@ -22,7 +22,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./imagens/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./imagens/favicon-16x16.png">
     <link rel="manifest" href="./imagens/site.webmanifest">
-    <script src="src/script.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <style>
         #loading{
@@ -56,6 +55,33 @@
     <title>Site Legalzim</title>
 </head>
 <body onload="myFunction()">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.2.9/firebase.min.js" integrity="sha512-QccMMAh33ttLik7hH89hvlX4F59rOQ236xU6JqGvkurYT3KmI5VbRxF4rGY3MF98iOAFPspM20heS7VyA7TVgw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.2.9/firebase-database.min.js" integrity="sha512-ibOrFEtKkrSG230OFOh7lNNnNbk/vdT7JFGPC3zGtod7Bh6PTLD5/cuBpQK7jrllPhhGo1XjWMatHqegIFCQyw==" crossorigin="anonymous"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+
+    <script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyCyFB5zCCp8Sp4i-mLzlXLTX35THs1oLFI",
+        authDomain: "site-32238.firebaseapp.com",
+        databaseURL: "https://site-32238-default-rtdb.firebaseio.com",
+        projectId: "site-32238",
+        storageBucket: "site-32238.appspot.com",
+        messagingSenderId: "932946919117",
+        appId: "1:932946919117:web:715c2793edafe556f5b384",
+        measurementId: "G-J4R8QGJLFN"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    var database = firebase.database()
+
+    </script>
+    <script src="src/script.js" type="module"></script>
+    
     <div id="loading"><p><img src="./imagens/load-gif.gif" alt="Navegador Incompativel :("><br>Carregando...<br>Talvez Seu Javascript Esteja Desabilitado (Ou é Seu Navegador Que Esta Lento Para Caceta!) Então Ative O Javascript E O Css Apos Ativar Recarrege A Página Obrigado :)<p></div>
     <script>
         var preloader = document.getElementById("loading");
@@ -163,6 +189,20 @@
             window.location.hash = ""
             localStorage.setItem("henriques_site_profile", profile)
             localStorage.setItem("henriques_site_profile_name", profile.getName())
+            // Database
+            database.ref(`Users/${profile.getId()}`).once("value").then(async function(db) {
+            if (db.val() == null) {
+                database.ref(`Users/${profile.getId()}`)
+                .set({
+                    id: profile.getId(),
+                    name: profile.getName(),
+                    img_url: profile.getImageUrl(),
+                    email: profile.getEmail(),
+                    profile: profile
+                })
+            }
+            })
+            // Tratar Boas Vindas
             if (localStorage.henriques_site_usuario == undefined) {
                 localStorage.setItem("henriques_site_usuario", true)
                 let popup = document.getElementsByClassName("popup")[0]

@@ -44,7 +44,7 @@ const init = () => {
                 main.appendChild(blogs())
                 break;
             case "#data":
-                main.appendChild(data(profile?profile:null, localStorage.henriques_site))
+                main.appendChild(data())
                 break;
             case "#priv":
                 main.appendChild(priv())
@@ -295,7 +295,6 @@ document.getElementById("tema_claro").addEventListener("click", () => {
     document.querySelectorAll(".a").forEach((a, b, c) => {
         a.style.color = "#333"
     });
-
 })
 document.getElementById("tema_dark").addEventListener("click", () => {
     tema = "dark"
