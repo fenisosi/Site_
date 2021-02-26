@@ -274,3 +274,19 @@ document.addEventListener("mouseleave", () => {
         saindo = true
     }
 })
+document.getElementById("tema_claro").addEventListener("click", () => {
+    document.getElementsByTagName("body")[0].style.backgroundColor = "whitesmoke"
+    document.getElementsByTagName("nav")[0].style.background = "whitesmoke"
+    document.getElementById("ul").style.background = "#EDEDED"
+    document.getElementsByTagName("html")[0].style.color = "#333"
+    document.getElementById("footer").style.backgroundColor = "whitesmoke"
+
+})
+document.getElementById("tema_dark").addEventListener("click", () => {
+    document.getElementsByTagName("body")[0].style.backgroundColor = "#303030"
+    document.getElementsByTagName("nav")[0].style.background = "#303030"
+    document.getElementById("ul").style.background = "#424242"
+    document.getElementById("html").style.color = "#ffffff"
+    document.getElementById("footer").style.backgroundColor = "#424242"
+
+})

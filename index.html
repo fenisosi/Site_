@@ -66,7 +66,7 @@
     <!--Cabecalho-->
         <header class="importante-fixed">
             <nav class="nav">
-                <ul>
+                <ul id="ul">
                     <li>
                         <a href="/#contato" class="pai_do_bunito"><button class="bunito">Henrique</button></a>
                     </li>
@@ -121,6 +121,9 @@
                         <o class="isto ninhuma"><br class="isto ninhuma"></o>
                         <li><a><i class="isto ninhuma" id="fonte_normal"> Fonte Normal </i></a></li> 
                         <li><a><i class="isto ninhuma" id="fonte_curvada"> Fonte Curvada </i></a></li>   
+                        <o class="isto ninhuma"><br class="isto ninhuma"></o>
+                        <li><a><i class="isto ninhuma" id="tema_claro"> Tema Claro </i></a></li> 
+                        <li><a><i class="isto ninhuma" id="tema_dark"> Tema Dark </i></a></li> 
                         <br>
                         <li onclick='setTimeout(function () {
                             document.querySelectorAll(".isto").forEach((a, b, c) => {
@@ -138,7 +141,7 @@
         </header>
     <!--Fim Do Cabecalho-->
     <div id="mudar"></div>
-    <div class="body2">
+    <div class="body2" id="body2">
     <!--Main-->
     <a href="#" class="g-signin2" data-onsuccess="onSignIn"></a>
     <script>
@@ -219,9 +222,11 @@
         <p class="msg-cookies">Este site usa cookies para garantir que você obtenha a melhor experiência. <a href="/#priv">Política de Privacidade</a> </p>
         <div class="btn-cookies"> Aceitar!</div>
     </div>
-        <footer class="footer">
+    <div id="back_footer">    
+        <footer class="footer" id="footer">
             <center><p><a href="/#editor">Use Nosso Editor Online</a></p></center>
         </footer>
+    </div>
     <!--Fim Do Footer-->
     <!--Bnt Top e Scripts Relacionados-->
     <button id="btn-top" onclick="javascript: ScrollToTop();"><o>⇪</o></button>

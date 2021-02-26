@@ -7,7 +7,7 @@
     <script>
         setInterval(() => {
             document.getElementById("body").innerHTML = localStorage.getItem("Codego-henriques-site") || "";
-            if(document.getElementById("body").innerHTML == localStorage.getItem("Codego-henriques-site")) return
+            if(document.getElementById("body").innerHTML == localStorage.getItem("Codego-henriques-site") || document.getElementById("body").innerHTML == "") return
             console.log("atualizei")
             location.reload()
         }, 100);
@@ -15,6 +15,6 @@
     <title>Document</title>
 </head>
 <body id="body">
-    
+    <center><p>Preview Aqui</p></center>
 </body>
 </html>

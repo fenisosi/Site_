@@ -35,10 +35,6 @@ export default (nome) => {
                 Vou Encinar Como Fazer Um Parecido Na Aula De HTML, CSS<br>Fique Ligado Para Ver As Novidades!
               <figcaption>
         <figure>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <p>Direitos Autorais:</p>
-        <div>Ícone <img src="./imagens/menu.png"> feito por <a href="https://www.freepik.com" title="Freepik" target="blank">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon" target="blank">www.flaticon.com</a>
-        <br><br><br>
     `;
 
     container.innerHTML = template;

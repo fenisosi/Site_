@@ -9,6 +9,7 @@ html {
     width: 100%;
     height: 100%;
     font-family: 'Amatic SC', cursive;
+    color: #333;
 }
 body {
     width: 100%;
@@ -68,14 +69,15 @@ a {
     position: fixed;
     margin-top: 0px;
     top: 0px;
-    background-color: whitesmoke;
+    background: whitesmoke;
     box-shadow: 10px 3px 5px #777;
     -moz-box-shadow: 10px 3px 5px #777;
     -webkit-box-shadow: 10px 3px 5px #777;
     width: 100%;
     z-index: 100;
+    color: rgb(116, 92, 92);
 }
-footer {
+#footer {
     position: fixed;
     width: 100%;
     bottom: 0px;
@@ -85,15 +87,33 @@ footer {
 	-moz-box-shadow: -4px -8px 6px -5px #777;
 	-webkit-box-shadow: -4px -8px 6px -5px #777;
     border-radius: 0;
+    z-index: 100;
+}
+#footer p {
+    color: rgb(110, 109, 109);
+}
+#footer a {
+    color: rgb(110, 109, 109);
+}
+.nav-pills a{
+    color: rgb(110, 109, 109);
 }
 .nav ul li {
      display: inline-block; 
 
 }
+.content {
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid white;
+}
+#CAGADA {
+    border: none;
+}
 .nav ul {
     padding:5px;
     margin:0px;
     background-color:#EDEDED;
+    color: #333;
     list-style:none;
 }
 .nav ul li a {
@@ -101,10 +121,8 @@ footer {
     display: inline-block;
 
     /* visual do link */
-    background-color:#EDEDED;
-    color: #333;
+    color: rgb(110, 109, 109);
     text-decoration: none;
-    border-bottom:3px solid #EDEDED;
     transition: color 1s;
 }
 .nav ul li a:hover {
