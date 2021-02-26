@@ -10,10 +10,10 @@ export default () => {
     <div id="wrapper">
         <div>
         
-            <ul class="nav-pills">
-                <li><a href= "" class="nav-link" @click.prevent="create()">Nova anotaçao</a></li>
+            <ul class="nav-pills pai_a">
+                <li><a href= "" class="nav-link a" @click.prevent="create()">Nova anotaçao</a></li>
                 <li v-for="note, index in notes">
-                    <a href= "" class="nav-link" name="mudar" @click.prevent="select(index)">{{  note.content  }}</a>
+                    <a href= "" class="nav-link a" name="mudar" @click.prevent="select(index)">{{  note.content  }}</a>
                 </li>
             </ul>
         </div>

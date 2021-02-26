@@ -90,13 +90,12 @@ a {
     z-index: 100;
 }
 #footer p {
-    color: rgb(110, 109, 109);
 }
 #footer a {
-    color: rgb(110, 109, 109);
+    color: #333;
 }
 .nav-pills a{
-    color: rgb(110, 109, 109);
+    color: #333;
 }
 .nav ul li {
      display: inline-block; 
@@ -121,7 +120,7 @@ a {
     display: inline-block;
 
     /* visual do link */
-    color: rgb(110, 109, 109);
+    color: #333;
     text-decoration: none;
     transition: color 1s;
 }
