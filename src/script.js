@@ -147,8 +147,8 @@ menu.addEventListener("click", () => {
     } else {
         
         $(".menu").css("position", "absolute")
-        $(".g-signin2").css("top", "-40px")
-        $(".parede").css("top", "-40px")
+        $(".g-signin2").css("top", "-50px")
+        $(".parede").css("top", "-50px")
         
         menu.classList.add("none")
         document.querySelector("#oopt").classList.remove("opt")
