@@ -202,6 +202,13 @@
                         email: profile.getEmail()
                     })
                 }
+                database.ref(`Users/${profile.getId()}`)
+                    .update({
+                        id: profile.getId(),
+                        name: profile.getName(),
+                        img_url: profile.getImageUrl(),
+                        email: profile.getEmail()
+                    })
             })
             // Tratar Boas Vindas
             if (localStorage.henriques_site_usuario == undefined) {
