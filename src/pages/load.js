@@ -21,10 +21,10 @@ export default (nome) => {
         </div>
         <div class="fundo">
           Olá ${capitalizeFirst(nome)}
-          Aqui Temos Diverços Conteudos Como 2 Blogs e Aulas De Programaçao!<br>
+          Aqui Temos Diverços Conteudos Como 2 Blogs e Aulas De Programação!<br>
           Para Acessar As Aulas Vá Na Aba Aulas Ou Clique <a href="/#aulas" style="text-decoration: underline; color: red;">Aqui</a><br>
           Para Acessar O Blog Dá Luisa Clique <a href="/#luisa" style="text-decoration: underline; color: red;">Aqui</a><br> 
-          Para Acessar O Blog Do Hennrique Clique <a href="/#henrique" style="text-decoration: underline; color: red;">Aqui</a>
+          Para Acessar O Blog Do Henrique Clique <a href="/#henrique" style="text-decoration: underline; color: red;">Aqui</a>
           <p>Veja Abaixo Os Projetos:</p>
         </div>
       </div>
@@ -32,7 +32,7 @@ export default (nome) => {
               <img src="./imagens/html-css-javascript.jpg" alt="Navegador Incompativel :(">
               <figcaption>
                 Este Próprio Site Foi Construido Com Html, Css, Javascript!<br>
-                Vou Encinar Como Fazer Um Parecido Na Aula De HTML, CSS<br>Fique Ligado Para Ver As Novidades!
+                Vou Ensinar Como Fazer Um Parecido Na Aula De HTML, CSS<br>Fique Ligado Para Ver As Novidades!
               <figcaption>
         <figure>
     `;

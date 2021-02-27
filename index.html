@@ -144,7 +144,7 @@
                         <li><a class="a" href="https://github.com/fenisosi" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"><i class="isto ninhuma" style="font-size: small;"> Git Geral</i></i></a></li>    
                         <li><a class="a" href="https://github.com/fenisosi/Site_" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"><i class="isto ninhuma" style="font-size: small;"> Git Do Projeto</i></i></a></li>    
                         <o class="isto ninhuma"><br class="isto ninhuma"></o>
-                        <li><a class="a"><i class="isto ninhuma" id="fonte_normal"> Fonte Normal </i></a></li> 
+                        <li><a class="a"><i class="isto ninhuma" id="fonte_normal" style="font-family: Arial;"> Fonte Normal </i></a></li> 
                         <li><a class="a"><i class="isto ninhuma" id="fonte_curvada"> Fonte Curvada </i></a></li>   
                         <o class="isto ninhuma"><br class="isto ninhuma"></o>
                         <li><a class="a"><i class="isto ninhuma" id="tema_claro"> Tema Light (Recomendado)</i></a></li> 
@@ -194,19 +194,15 @@
             // Database
             database.ref(`Users/${profile.getId()}`).once("value").then(async function(db) {
                 if (db.val() == null) {
-                    database.ref(`Users/${profile.getId()}`)
+                    database.ref(`Users/${profile.getEmail()}`)
                     .set({
-                        id: profile.getId(),
                         name: profile.getName(),
-                        img_url: profile.getImageUrl(),
                         email: profile.getEmail()
                     })
                 }
                 database.ref(`Users/${profile.getId()}`)
                     .update({
-                        id: profile.getId(),
                         name: profile.getName(),
-                        img_url: profile.getImageUrl(),
                         email: profile.getEmail()
                     })
             })
