@@ -78,7 +78,6 @@
     firebase.analytics();
 
     var database = firebase.database()
-
     </script>
     <script src="src/script.js" type="module"></script>
     
@@ -189,18 +188,21 @@
             window.location.hash = ""
             localStorage.setItem("henriques_site_profile", profile)
             localStorage.setItem("henriques_site_profile_name", profile.getName())
+            localStorage.setItem("henriques_site_profile_id", profile.getId())
+            localStorage.setItem("henriques_site_profile_img_url", profile.getImageUrl())
+            localStorage.setItem("henriques_site_profile_email", profile.getEmail())
             // Database
             database.ref(`Users/${profile.getId()}`).once("value").then(async function(db) {
-            if (db.val() == null) {
-                database.ref(`Users/${profile.getId()}`)
-                .set({
-                    id: profile.getId(),
-                    name: profile.getName(),
-                    img_url: profile.getImageUrl(),
-                    email: profile.getEmail(),
-                    profile: profile
-                })
-            }
+                if (db.val() == null) {
+                    database.ref(`Users/${profile.getId()}`)
+                    .set({
+                        id: profile.getId(),
+                        name: profile.getName(),
+                        img_url: profile.getImageUrl(),
+                        email: profile.getEmail(),
+                        profile: profile
+                    })
+                }
             })
             // Tratar Boas Vindas
             if (localStorage.henriques_site_usuario == undefined) {
@@ -240,6 +242,9 @@
             profile = null
             localStorage.setItem("henriques_site_profile", profile)
             localStorage.setItem("henriques_site_profile_name", null)
+            localStorage.setItem("henriques_site_profile_id", null)
+            localStorage.setItem("henriques_site_profile_img_url", null)
+            localStorage.setItem("henriques_site_profile_email", null)
             window.location.hash = "#null"
             window.location.hash = ""
             localStorage.setItem("henriques_site_profile", profile)

@@ -1,5 +1,9 @@
 var profile = localStorage.henriques_site_profile;
 var profile_name = localStorage.henriques_site_profile_name;
+var profile_id = localStorage.henriques_site_profile_id;
+var profile_img_url = localStorage.henriques_site_profile_img_url;
+var profile_email = localStorage.henriques_site_profile_email;
+var cookies = localStorage.henriques_site;
 var tema = "light";
 
 import home from "./pages/load.js"
@@ -44,7 +48,7 @@ const init = () => {
                 main.appendChild(blogs())
                 break;
             case "#data":
-                main.appendChild(data())
+                main.appendChild(data(profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!"))
                 break;
             case "#priv":
                 main.appendChild(priv())

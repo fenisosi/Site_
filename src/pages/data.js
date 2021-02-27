@@ -1,4 +1,4 @@
-export default (nome, coocks) => {
+export default (nome, id, img, email, coocks) => {
     const container = document.createElement('div');
 
     function capitalizeFirst(str) {
@@ -9,12 +9,12 @@ export default (nome, coocks) => {
     if (nome != null) {
         template = `
         <div class="data">
-        <center><img src="${nome.getImageUrl()}" class="img-circle"><br></center>
-        <center>Olá ${capitalizeFirst(nome.getName())}<br></center>
+        <center><img src="${img}" class="img-circle"><br></center>
+        <center>Olá ${capitalizeFirst(nome)}<br></center>
         <center>Temos os Seguintes Dados Sobre Você:<br></center>
-        <center>Seu Id: ${nome.getId()}<br></center>
-        <center>Seu Email: ${nome.getEmail()}<br></center>
-        <center>Aceitou os Cookies? ${coocks?"Sim!":"Não!"}</center>
+        <center>Seu Id: ${id}<br></center>
+        <center>Seu Email: ${email}<br></center>
+        <center>Aceitou os Cookies? ${coocks}</center>
         </div>
         `;
     } else {
