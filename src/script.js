@@ -27,7 +27,7 @@ const main = document.querySelector('#root')
 const init = () => {
     window.addEventListener("hashchange", () => {
         main.innerHTML = ""
-        document.querySelector("footer").innerHTML = `<center><p><a href="/#editor">Use Nosso Editor Online</a></p></center>`
+        document.querySelector("footer").innerHTML = `<center><p><a href="/#editor" class="a">Use Nosso Editor Online</a></p></center>`
         switch(window.location.hash.split("?")[0]){
             case "":
                 main.appendChild(home(profile != null?profile_name.toLowerCase():"Querido Leitor"));
@@ -133,7 +133,7 @@ const init = () => {
                         });
                     }
                 })
-                document.querySelector("footer").innerHTML = `<center><p>Apague Tudo Para Remover!</p></center>`
+                document.querySelector("footer").innerHTML = `<center><p class="a">Apague Tudo Para Remover!</p></center>`
                 break;
             default:
                 main.appendChild(pg404(window.location.hash.split("#")[1]));
@@ -310,4 +310,16 @@ document.getElementById("tema_dark").addEventListener("click", () => {
     document.querySelectorAll(".a").forEach((a, b, c) => {
         a.style.color = "#fff"
     });
+})
+document.addEventListener("mousemove", function () {
+    if (tema == "dark") {
+        document.getElementsByTagName("body")[0].style.backgroundColor = "#303030"
+        document.getElementsByTagName("nav")[0].style.background = "#303030"
+        document.getElementById("ul").style.background = "#424242"
+        document.getElementById("html").style.color = "rgba(255, 255, 255, 0.5)"
+        document.getElementById("footer").style.backgroundColor = "#424242"
+        document.querySelectorAll(".a").forEach((a, b, c) => {
+            a.style.color = "#fff"
+        });
+    }
 })
