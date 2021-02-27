@@ -28,8 +28,8 @@ export default () => {
     <p>Clique Duas Vezes Sobre Seu Arquivo E Pronto Seu Site Está Ótimo Mas Sem Host Bom Isso Ensinarei Amanha Dia 11/02/2021 (obg: Esta Aula Não Sera Deletada!)</p>
     <br>
     <h1>HOST</h1>
-    Hoje Irei Ensinar Como Hospedar Seu Site Primeiramente Abra o Site <a href="https://netlify.com">https://netlify.com</a> E Crie Uma Conta Apos Criar Sua Conta Crie Um Site Pelo Github E Va No seu Github E Crie Um Repositorio VAZIO Va No Seu Vscode Ou Editor De Texto Entre Pelo Terminal Na Pasta Do Projeto E Digite:<br>
-    <div class="codego">git init<br>git clone <url_do_seu_github><br>git add * <br>git remote add main <url_do_seu_github> <br>git push -u main main</div>Isso Na Primeira Vez Da 2ª Em Diante Digite:<br>
+    <p>Hoje Irei Ensinar Como Hospedar Seu Site Primeiramente Abra o Site <a href="https://netlify.com">https://netlify.com</a> E Crie Uma Conta Apos Criar Sua Conta Crie Um Site Pelo Github E Va No seu Github E Crie Um Repositorio VAZIO Va No Seu Vscode Ou Editor De Texto Entre Pelo Terminal Na Pasta Do Projeto E Digite:<br>
+    </p><div class="codego">git init<br>git clone <url_do_seu_github><br>git add * <br>git remote add main <url_do_seu_github> <br>git push -u main main</div>Isso Na Primeira Vez Da 2ª Em Diante Digite:<br>
     <div class="codego">git add * <br>git commit -am 'coisa que fez no commit' <br>git push</div> Pronto Seu Site Estara Online (Se Fez Tudo Corretamente)
     CASO ALGO BUGE:
     Entre No Site <a href="https://git-scm.com">https://git-scm.com</a> E Faça O Download Do Gitbash Provavelmente Por Isso Ele Não Funciona<br>
