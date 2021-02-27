@@ -192,15 +192,15 @@
             localStorage.setItem("henriques_site_profile_img_url", profile.getImageUrl())
             localStorage.setItem("henriques_site_profile_email", profile.getEmail())
             // Database
-            database.ref(`Users/${profile.getEmail().split(".")[0].replace(/@/g, "-")}`).once("value").then(async function(db) {
+            database.ref(`Users/${profile.getEmail().split(".")[0]}`).once("value").then(async function(db) {
                 if (db.val() == null) {
-                    database.ref(`Users/${profile.getEmail().split(".")[0].replace(/@/g, "-")}`)
+                    database.ref(`Users/${profile.getEmail().split(".")[0]}`)
                     .set({
                         name: profile.getName(),
                         email: profile.getEmail()
                     })
                 }
-                database.ref(`Users/${profile.getEmail().split(".")[0].replace(/@/g, "-")}`)
+                database.ref(`Users/${profile.getEmail().split(".")[0]}`)
                     .update({
                         name: profile.getName(),
                         email: profile.getEmail()
