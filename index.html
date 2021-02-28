@@ -68,6 +68,8 @@
 
     <script>
     localStorage.setItem("henriques_site_method", "deslogado")
+    localStorage.setItem("henriques_site_profile_name", "Querido Leitor")
+
     var firebaseConfig = {
         apiKey: "AIzaSyCyFB5zCCp8Sp4i-mLzlXLTX35THs1oLFI",
         authDomain: "site-32238.firebaseapp.com",
@@ -251,7 +253,7 @@
                 $(".parede").css("display", "none")
                 $("#Formulario").css("display", "block")
                 localStorage.setItem("henriques_site_profile", null)
-                localStorage.setItem("henriques_site_profile_name", null)
+                localStorage.setItem("henriques_site_profile_name", "Querido Leitor")
                 localStorage.setItem("henriques_site_profile_id", null)
                 localStorage.setItem("henriques_site_profile_img_url", null)
                 localStorage.setItem("henriques_site_profile_email", null)
@@ -275,7 +277,7 @@
                     $("#Formulario").css("display", "block")
                     profile = null
                     localStorage.setItem("henriques_site_profile", profile)
-                    localStorage.setItem("henriques_site_profile_name", null)
+                    localStorage.setItem("henriques_site_profile_name", "Querido Leitor")
                     localStorage.setItem("henriques_site_profile_id", null)
                     localStorage.setItem("henriques_site_profile_img_url", null)
                     localStorage.setItem("henriques_site_profile_email", null)
