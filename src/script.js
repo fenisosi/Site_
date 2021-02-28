@@ -255,10 +255,10 @@ btnCookies.addEventListener('click', () => {
             Notification.requestPermission(function (status) {
                 let n = new Notification("EEE AMIGIM", {
                     body: "Cookes Aceitos Com Sucesso!"
-                }).then(function()  {
+                }).onshow = function()  {
                     localStorage.setItem("henriques_site", "accept"); 
                     document.querySelector(".box-cookies").classList.add('hide');
-                })
+                }
                 
                 
         })

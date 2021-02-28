@@ -164,20 +164,24 @@ a {
     display: block;
     margin: auto;
     z-index: 100;
+    width: 120px;
+    height: 35px;
     text-decoration: none;
     box-shadow: 0.2rem 0.2rem 4px black;
 }
 .parede {  
     top: 50px;  
+    width: 120px;
+    height: 30px;
     position: absolute;
     display: none;
     z-index: 100;
     margin-bottom: 0px;
-    right: 35px;
+    right: 10px;
     position: fixed;
     text-decoration: none;
     background: #EDEDED;
-    border: 8px solid #EDEDED;
+    text-align: center;
     box-shadow: 0.2rem 0.2rem 4px black;
 }
 .menu {
