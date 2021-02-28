@@ -67,6 +67,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
 
     <script>
+    localStorage.setItem("henriques_site_method", "deslogado")
     var firebaseConfig = {
         apiKey: "AIzaSyCyFB5zCCp8Sp4i-mLzlXLTX35THs1oLFI",
         authDomain: "site-32238.firebaseapp.com",
@@ -172,7 +173,8 @@
     <div id="mudar"></div>
     <div class="body2" id="body2">
     <!--Main-->
-    <a href="#" class="g-signin2" data-onsuccess="onSignIn"></a>
+    <a class="g-signin2" data-onsuccess="onSignIn"></a>
+    <a href="/#sing-in" id="Formulario"><button class="sing-in"><i class="far fa-address-card"></i> Enter</button></a>
     <script>
         let profile;
         function onSignIn(googleUser) {
@@ -184,12 +186,15 @@
 
             $(".g-signin2").css("display", "none")
             $(".parede").css("display", "block")
+            $("#Formulario").css("display", "none")
             console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
             console.log('Name: ' + profile.getName().toLowerCase());
             console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            let hash = window.location.hash
             window.location.hash = "#null"
-            window.location.hash = ""
+            window.location.hash = hash
+            localStorage.setItem("henriques_site_method", "google")
             localStorage.setItem("henriques_site_profile", profile)
             localStorage.setItem("henriques_site_profile_name", profile.getName())
             localStorage.setItem("henriques_site_profile_id", profile.getId())
@@ -235,32 +240,56 @@
         
         
         </script>
-    <a href="#" onclick="signOut();" class="parede">Sign out</a>
+    <a onclick="signOut();" class="parede">Sign out</a>
     <script>
         function signOut() {
-          var auth2 = gapi.auth2.getAuthInstance();
-          auth2.signOut().then(function () {
-            console.log('User signed out.');
-            var deslogar = confirm("Realmente Quer Deslogar?")
-            if (!deslogar) return;
-            $(".g-signin2").css("display", "block")
-            $(".parede").css("display", "none")
-            profile = null
-            localStorage.setItem("henriques_site_profile", profile)
-            localStorage.setItem("henriques_site_profile_name", null)
-            localStorage.setItem("henriques_site_profile_id", null)
-            localStorage.setItem("henriques_site_profile_img_url", null)
-            localStorage.setItem("henriques_site_profile_email", null)
-            window.location.hash = "#null"
-            window.location.hash = ""
-            localStorage.setItem("henriques_site_profile", profile)
-            let popup = document.getElementsByClassName("popup")[0]
-            popup.innerHTML = `<center class="popup"><p class="popup">Thau! <br>(Por Favor Se Logue Novamente ( ͡ಠ ʖ̯ ͡ಠ))</p></center>`
-            popup.style.display = "block"
-            document.addEventListener("click", () => {
-                popup.style.display = "none"
-            })
-          });
+            let method = localStorage.henriques_site_method;
+            if (method == "email") {
+                $(".g-signin2").css("display", "block")
+                $(".parede").css("display", "none")
+                $("#Formulario").css("display", "block")
+                localStorage.setItem("henriques_site_profile", null)
+                localStorage.setItem("henriques_site_profile_name", null)
+                localStorage.setItem("henriques_site_profile_id", null)
+                localStorage.setItem("henriques_site_profile_img_url", null)
+                localStorage.setItem("henriques_site_profile_email", null)
+                console.log(localStorage.henriques_site_profile);
+                console.log(localStorage.henriques_site_profile_name);
+                console.log(localStorage.henriques_site_profile_id);
+                console.log(localStorage.henriques_site_profile_img_url);
+                console.log(localStorage.henriques_site_profile_email);
+                console.log(localStorage.henriques_site);
+                let hash = window.location.hash
+                window.location.hash = "#null"
+                window.location.hash = hash
+            } else if (method == "google") {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                    var deslogar = confirm("Realmente Quer Deslogar?")
+                    if (!deslogar) return;
+                    $(".g-signin2").css("display", "block")
+                    $(".parede").css("display", "none")
+                    $("#Formulario").css("display", "block")
+                    profile = null
+                    localStorage.setItem("henriques_site_profile", profile)
+                    localStorage.setItem("henriques_site_profile_name", null)
+                    localStorage.setItem("henriques_site_profile_id", null)
+                    localStorage.setItem("henriques_site_profile_img_url", null)
+                    localStorage.setItem("henriques_site_profile_email", null)
+                    let hash = window.location.hash
+                    window.location.hash = "#null"
+                    window.location.hash = hash
+                    localStorage.setItem("henriques_site_profile", profile)
+                    let popup = document.getElementsByClassName("popup")[0]
+                    popup.innerHTML = `<center class="popup"><p class="popup">Thau! <br>(Por Favor Se Logue Novamente ( ͡ಠ ʖ̯ ͡ಠ))</p></center>`
+                    popup.style.display = "block"
+                    document.addEventListener("click", () => {
+                        popup.style.display = "none"
+                    })
+                });
+            }
+            localStorage.setItem("henriques_site_method", "deslogado")
         }
     </script>
         <main id="root" class="root">

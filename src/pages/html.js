@@ -4,7 +4,7 @@ export default () => {
 
     const string = `
     <div class="codego">
-    <pre id="copiarcod">
+    <pre>
 &lt!DOCTYPE html&gt
 &lthtml lang='pt-br'&gt
 &lthead&gt
@@ -40,7 +40,7 @@ export default () => {
     <h3>Sem Tags</h3>
     <p>Para Escrever Algo Sem Tags Va Em Body E Escreva Oque Quiser!</p>
     <h3>Com Tags</h3>
-    <p>Use A Tag <nada class="codego">&ltp&gtCoisa A Se Escrever&lt/p&gt</nada> Para Criar Um PARAGRAFO</p>
+    <p>Use A Tag <nada class="codigo">&ltp&gtCoisa A Se Escrever&lt/p&gt</nada> Para Criar Um PARAGRAFO</p>
     <p>Use A Tag <nada class="codego">&lth1&gtCoisa A Se Escrever&lt/h1&gt</nada> Para Criar Um TITULO</p>
     <h2>Links No Seu Site</h2>
     <p>Use A Tag <nada class="codego">&lta href="${window.location.href}"&gtOque Aparecera Para Clicar&lt/a&gt</nada>Para Criar Um Link (obg: Troque o <n class="codego">href="${window.location.href}"</n> Pelo Site Que Sera Desviado Quando Clicar)</p>

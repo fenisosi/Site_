@@ -17,6 +17,8 @@ import data from "./pages/data.js"
 import priv from "./pages/priv.js"
 import editor from "./pages/editor.js"
 import contato from "./pages/contato.js"
+import sing_in from "./pages/sing-in.js"
+import log_in from "./pages/log-in.js"
 
 
 
@@ -28,12 +30,68 @@ const init = () => {
     window.addEventListener("hashchange", () => {
         main.innerHTML = ""
         document.querySelector("footer").innerHTML = `<center><p><a href="/#editor" class="a">Use Nosso Editor Online</a></p></center>`
+        profile = localStorage.henriques_site_profile;
+        profile_name = localStorage.henriques_site_profile_name;
+        profile_id = localStorage.henriques_site_profile_id;
+        profile_img_url = localStorage.henriques_site_profile_img_url;
+        profile_email = localStorage.henriques_site_profile_email;
+        cookies = localStorage.henriques_site;
         switch(window.location.hash.split("?")[0]){
             case "":
                 main.appendChild(home(profile != null?profile_name.toLowerCase():"Querido Leitor"));
                 break;
             case "#aulas":
                 main.appendChild(aulas());
+                break;
+            case "#log-in":
+                main.appendChild(log_in());
+                document.getElementById("logar").addEventListener("click", () => {
+                    let email = document.getElementById("e-maila").value;
+                    let senha = document.getElementById("senhaa").value;
+                
+                    database.ref("Users/").once("value").then(async function(db) {
+                        Object.keys(db.val()).forEach((email_db) => {
+                            if (email_db == email.split(".")[0]) {
+                                database.ref(`Users/${email.split(".")[0]}`).once("value").then(async function(db) {
+                                    if (db.val().password == senha) {
+                                        localStorage.setItem("henriques_site_method", "email")
+                                        localStorage.setItem("henriques_site_profile", true)
+                                        localStorage.setItem("henriques_site_profile_name", db.val().name)
+                                        localStorage.setItem("henriques_site_profile_id", "Logado Com Email e Senha, Não Tem Id")
+                                        localStorage.setItem("henriques_site_profile_img_url", "Logado Com Email e Senha")
+                                        localStorage.setItem("henriques_site_profile_email", db.val().email)
+                                        $(".g-signin2").css("display", "none")
+                                        $(".parede").css("display", "block")
+                                        $("#Formulario").css("display", "none")
+                                        let hash = window.location.hash
+                                        window.location.hash = "#null"
+                                        window.location.hash = hash
+                                        let popup = document.getElementsByClassName("popup")[0]
+                                        popup.innerHTML = `<center class="popup"><p class="popup">Bem Vindo(a) De Volta ${db.val().name}</p></center>`
+                                        popup.style.display = "block"
+                                        document.addEventListener("click", () => {
+                                            popup.style.display = "none"
+                                        })
+                                        return
+                                    } else {
+                                        let footer_color = document.querySelector("footer").style.color;
+                                        let footer_content = document.querySelector("footer").innerHTML;
+                                        document.querySelector("footer").innerHTML = `<center><p>Senha Errada!</p></center>`
+                                        document.querySelector("footer").style.color = "red";
+                                        setTimeout(function () {document.querySelector("footer").style.color = footer_color; document.querySelector("footer").innerHTML = footer_content}, 10000)
+                                        return
+                                    }
+                                })
+                            }
+                        })
+                        let footer_color = document.querySelector("footer").style.color;
+                        let footer_content = document.querySelector("footer").innerHTML;
+                        document.querySelector("footer").innerHTML = `<center><p>Email Incorreto!</p></center>`
+                        document.querySelector("footer").style.color = "red";
+                        setTimeout(function () {document.querySelector("footer").style.color = footer_color; document.querySelector("footer").innerHTML = footer_content}, 10000)
+                        return
+                    })
+                })
                 break;
             case "#html":
                 main.appendChild(html());
@@ -48,7 +106,86 @@ const init = () => {
                 main.appendChild(blogs())
                 break;
             case "#data":
-                main.appendChild(data(profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!"))
+                main.appendChild(data(localStorage.henriques_site_profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!"))
+                break;
+            case "#sing-in":
+                main.appendChild(sing_in())
+                document.getElementById("cadastrar").addEventListener("click", () => {
+                    let nome = document.getElementById("nome").value;
+                    let email = document.getElementById("e-mail").value;
+                    let senha = document.getElementById("senha").value;
+                    if (!email.includes("@") || !email.split("@")[1]) {
+                        let footer_color = document.querySelector("footer").style.color;
+                        let footer_content = document.querySelector("footer").innerHTML;
+                        document.querySelector("footer").innerHTML = `<center><p>Email Invalido!</p></center>`
+                        document.querySelector("footer").style.color = "red";
+                        setTimeout(function () {document.querySelector("footer").style.color = footer_color; document.querySelector("footer").innerHTML = footer_content}, 10000)
+                        return
+                    }
+                    if (!nome.split("")[5]) {
+                        let footer_color = document.querySelector("footer").style.color;
+                        let footer_content = document.querySelector("footer").innerHTML;
+                        document.querySelector("footer").innerHTML = `<center><p>Nome Muito Curto!</p></center>`
+                        document.querySelector("footer").style.color = "red";
+                        setTimeout(function () {document.querySelector("footer").style.color = footer_color; document.querySelector("footer").innerHTML = footer_content}, 10000)
+                        return
+                    }
+                    if (!senha.split("")[5]) {
+                        let footer_color = document.querySelector("footer").style.color;
+                        let footer_content = document.querySelector("footer").innerHTML;
+                        document.querySelector("footer").innerHTML = `<center><p>Senha Muito Curta!</p></center>`
+                        document.querySelector("footer").style.color = "red";
+                        setTimeout(function () {document.querySelector("footer").style.color = footer_color; document.querySelector("footer").innerHTML = footer_content}, 10000)
+                        return
+                    }
+                    database.ref("Users/").once("value").then(async function(db) {
+                        Object.keys(db.val()).forEach((email_db) => {
+                            if (email_db == email.split(".")[0]) {
+                                let footer_color = document.querySelector("footer").style.color;
+                                let footer_content = document.querySelector("footer").innerHTML;
+                                document.querySelector("footer").innerHTML = `<center><p>Email Já Cadastrado!!</p></center>`
+                                document.querySelector("footer").style.color = "red";
+                                setTimeout(function () {document.querySelector("footer").style.color = footer_color; document.querySelector("footer").innerHTML = footer_content}, 10000)
+                                return
+                            }
+                        })
+                        let footer_color = document.querySelector("footer").style.color;
+                        let footer_content = document.querySelector("footer").innerHTML;
+                        document.querySelector("footer").innerHTML = `<center><p>Cadastrado Com Sucesso!!!</p></center>`
+                        document.querySelector("footer").style.color = "green";
+                        setTimeout(function () {document.querySelector("footer").style.color = footer_color; document.querySelector("footer").innerHTML = footer_content}, 10000)
+                        database.ref(`Users/${email.split(".")[0]}`).set({
+                            email: email,
+                            name: nome,
+                            password: senha
+                        })
+                        localStorage.setItem("henriques_site_method", "email")
+                        localStorage.setItem("henriques_site_profile", true)
+                        localStorage.setItem("henriques_site_profile_name", nome)
+                        localStorage.setItem("henriques_site_profile_id", "Logado Com Email e Senha, Não Tem Id")
+                        localStorage.setItem("henriques_site_profile_img_url", "Logado Com Email e Senha")
+                        localStorage.setItem("henriques_site_profile_email", email)
+                        profile = localStorage.henriques_site_profile;
+                        profile_name = localStorage.henriques_site_profile_name;
+                        profile_id = localStorage.henriques_site_profile_id;
+                        profile_img_url = localStorage.henriques_site_profile_img_url;
+                        profile_email = localStorage.henriques_site_profile_email;
+                        cookies = localStorage.henriques_site;
+                        $(".g-signin2").css("display", "none")
+                        $(".parede").css("display", "block")
+                        $("#Formulario").css("display", "none")
+                        let hash = window.location.hash
+                        window.location.hash = "#null"
+                        window.location.hash = hash
+                        localStorage.setItem("henriques_site_usuario", true)
+                        let popup = document.getElementsByClassName("popup")[0]
+                        popup.innerHTML = `<center class="popup"><p class="popup">Bem Vindo(a) ${nome}</p></center>`
+                        popup.style.display = "block"
+                        document.addEventListener("click", () => {
+                            popup.style.display = "none"
+                        })
+                    })
+                })
                 break;
             case "#priv":
                 main.appendChild(priv())
@@ -199,7 +336,7 @@ document.querySelector("body").addEventListener("click", () => {
     
 })
 setInterval(function () {
-    if (profile) {
+    if (!profile) {
         return
     } else {
         $.notify("Logue-se Por Favor!!!", "error")
@@ -321,3 +458,5 @@ document.getElementById("tema_claro").addEventListener("click", () => {
 document.getElementById("tema_dark").addEventListener("click", () => {
     darkMode();
 })
+
+
