@@ -289,18 +289,9 @@ document.addEventListener("mouseleave", () => {
         saindo = true
     }
 })
-document.getElementById("tema_claro").addEventListener("click", () => {
-    tema = "light"
-    document.getElementsByTagName("body")[0].style.backgroundColor = "whitesmoke"
-    document.getElementsByTagName("nav")[0].style.background = "whitesmoke"
-    document.getElementById("ul").style.background = "#EDEDED"
-    document.getElementsByTagName("html")[0].style.color = "#333"
-    document.getElementById("footer").style.backgroundColor = "whitesmoke"
-    document.querySelectorAll(".a").forEach((a, b, c) => {
-        a.style.color = "#333"
-    });
-})
-document.getElementById("tema_dark").addEventListener("click", () => {
+
+
+function darkMode() {
     tema = "dark"
     document.getElementsByTagName("body")[0].style.backgroundColor = "#303030"
     document.getElementsByTagName("nav")[0].style.background = "#303030"
@@ -310,16 +301,24 @@ document.getElementById("tema_dark").addEventListener("click", () => {
     document.querySelectorAll(".a").forEach((a, b, c) => {
         a.style.color = "#fff"
     });
+}
+function ligthMode() {
+    tema = "light"
+    document.getElementsByTagName("body")[0].style.backgroundColor = "whitesmoke"
+    document.getElementsByTagName("nav")[0].style.background = "whitesmoke"
+    document.getElementById("ul").style.background = "#EDEDED"
+    document.getElementsByTagName("html")[0].style.color = "#333"
+    document.getElementById("footer").style.backgroundColor = "whitesmoke"
+    document.querySelectorAll(".a").forEach((a, b, c) => {
+        a.style.color = "#333"
+    });
+}
+
+
+document.getElementById("tema_claro").addEventListener("click", () => {
+    ligthMode();
 })
-document.addEventListener("mousemove", function () {
-    if (tema == "dark") {
-        document.getElementsByTagName("body")[0].style.backgroundColor = "#303030"
-        document.getElementsByTagName("nav")[0].style.background = "#303030"
-        document.getElementById("ul").style.background = "#424242"
-        document.getElementById("html").style.color = "rgba(255, 255, 255, 0.5)"
-        document.getElementById("footer").style.backgroundColor = "#424242"
-        document.querySelectorAll(".a").forEach((a, b, c) => {
-            a.style.color = "#fff"
-        });
-    }
+document.getElementById("tema_dark").addEventListener("click", () => {
+    darkMode();
 })
+t 

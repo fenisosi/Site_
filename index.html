@@ -213,14 +213,14 @@
             if (localStorage.henriques_site_usuario == undefined) {
                 localStorage.setItem("henriques_site_usuario", true)
                 let popup = document.getElementsByClassName("popup")[0]
-                popup.innerHTML = `<center class="popup"><p class="popup">Bem Vindo ${profile.getName()}</p></center>`
+                popup.innerHTML = `<center class="popup"><p class="popup">Bem Vindo(a) ${profile.getName()}</p></center>`
                 popup.style.display = "block"
                 document.addEventListener("click", () => {
                     popup.style.display = "none"
                 })
             } else {
                 let popup = document.getElementsByClassName("popup")[0]
-                popup.innerHTML = `<center class="popup"><p class="popup">Bem Vindo De Volta ${profile.getName()}</p></center>`
+                popup.innerHTML = `<center class="popup"><p class="popup">Bem Vindo(a) De Volta ${profile.getName()}</p></center>`
                 popup.style.display = "block"
                 document.addEventListener("click", () => {
                     popup.style.display = "none"
@@ -269,8 +269,8 @@
     <!--Fim Dom Main-->
     <!--Footer-->
     <div class="box-cookies hide">
-        <p class="msg-cookies">Este site usa cookies para garantir que você obtenha a melhor experiência. <a href="/#priv">Política de Privacidade</a> </p>
-        <div class="btn-cookies"> Aceitar!</div>
+        <p class="msg-cookies">Este site usa ‘cookies’ para garantir que você obtenha a melhor experiência. <a href="/#priv">Política de Privacidade</a> </p>
+        <div class="btn-cookies">Aceitar!</div>
     </div>
     <div id="back_footer">    
         <footer class="footer" id="footer">
