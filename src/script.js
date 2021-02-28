@@ -29,6 +29,9 @@ const main = document.querySelector('#root')
 const init = () => {
     window.addEventListener("hashchange", () => {
         main.innerHTML = ""
+        if (tema == "dark") {
+            darkMode();
+        }
         document.querySelector("footer").innerHTML = `<center><p><a href="/#editor" class="a">Use Nosso Editor Online</a></p></center>`
         profile = localStorage.henriques_site_profile;
         profile_name = localStorage.henriques_site_profile_name;
