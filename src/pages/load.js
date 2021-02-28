@@ -25,7 +25,6 @@ export default (nome) => {
           Para Acessar As Aulas Vá à Aba Aulas Ou Clique <a href="/#aulas" style="text-decoration: underline; color: red;">Aqui.</a><br>
           Para Acessar O Blog Dá Luisa Clique <a href="/#luisa" style="text-decoration: underline; color: red;">Aqui</a><br> 
           Para Acessar O Blog Do Henrique Clique <a href="/#henrique" style="text-decoration: underline; color: red;">Aqui</a></p>
-          <div class="g-recaptcha" data-sitekey="6LcBBmsaAAAAABT9bAgkJKPJ1BE6JUZaphSoxOlG"></div>
           <p>Veja Abaixo Os Projetos:</p>
         </div>
       </div>
