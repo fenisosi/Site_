@@ -21,7 +21,7 @@ export default (nome) => {
         </div>
         <div class="fundo">
           <p>Olá ${capitalizeFirst(nome)}<br>
-          Aqui Temos Diversos Conteúdos Como 2 Blogs e Aulas De Programação!<br>
+          Aqui Temos Diversos Conteúdos Como:<br>2 Blogs e Aulas De Programação!<br>
           Para Acessar As Aulas Vá à Aba Aulas Ou Clique <a href="/#aulas" style="text-decoration: underline; color: red;">Aqui.</a><br>
           Para Acessar O Blog Dá Luisa Clique <a href="/#luisa" style="text-decoration: underline; color: red;">Aqui</a><br> 
           Para Acessar O Blog Do Henrique Clique <a href="/#henrique" style="text-decoration: underline; color: red;">Aqui</a></p>

@@ -406,12 +406,16 @@ a:hover {
 .img {
     width: 100%;
     height: 80vh;
+    min-width: 530px;
+    min-height: 130px;
     background-color: rgba(0, 0, 0, 0.8);
 }
 .img img {
     width: 100%;
     height: 100%;
     opacity: 0.5;
+    min-width: 530px;
+    min-height: 130px;
     object-fit: cover;
 }
 .geral {
@@ -419,7 +423,7 @@ a:hover {
 }
 .fundo {
     position: absolute;
-    top: 100px;
+    top: 15%;
     left: 15px;
     color: #fff;
     animation: zoom 3s;

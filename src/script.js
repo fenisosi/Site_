@@ -75,6 +75,7 @@ const init = () => {
                                         document.addEventListener("click", () => {
                                             popup.style.display = "none"
                                         })
+                                        window.location.hash = ""
                                         return
                                     } else {
                                         let footer_color = document.querySelector("footer").style.color;
@@ -187,6 +188,7 @@ const init = () => {
                         document.addEventListener("click", () => {
                             popup.style.display = "none"
                         })
+                        window.location.hash = ""
                     })
                 })
                 break;

@@ -180,8 +180,7 @@
     <script>
         let profile;
         function onSignIn(googleUser) {
-            profile = googleUser.getBasicProfile();
-            
+            profile = googleUser.getBasicProfile()
             if (localStorage.perfil_henriques_site) {
                 localStorage.setItem("perfil_henriques_site", profile.getName())
             }
@@ -215,8 +214,7 @@
                 database.ref(`Users/${profile.getEmail().split(".")[0]}`)
                     .update({
                         name: profile.getName(),
-                        email: profile.getEmail(),
-                        password: ""
+                        email: profile.getEmail()
                     })
             })
             // Tratar Boas Vindas
