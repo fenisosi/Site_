@@ -458,5 +458,9 @@ document.getElementById("tema_claro").addEventListener("click", () => {
 document.getElementById("tema_dark").addEventListener("click", () => {
     darkMode();
 })
-
+document.addEventListener("mousemove", () => {
+    if (tema == "dark") {
+        darkMode();
+    }
+})
 
