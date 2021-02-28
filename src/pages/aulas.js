@@ -23,7 +23,7 @@ export default () => {
         <picture class="pc">\
             <img src="imagens/css.png" alt="Imagem Fexivel" style="margin-left: 3px;">\
         </picture>\
-    </a><bosta style="margin-left: 40px;">Descriçao: Um Curso Basico De Html!, Contendo Esplicaçao e Codegos Basicos Prontos, Que Ira Encinar a Fazer Um Site Semelhante</bosta></p>\
+    </a><bosta style="margin-left: 40px;">Descrição: Um Curso Básico De Html! Contendo Explicações e Códigos Básicos Prontos, Que Ira Ensinar a Fazer Um Site Semelhante.</bosta></p>\
     ';
 
 
