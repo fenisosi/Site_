@@ -206,7 +206,8 @@
                     database.ref(`Users/${profile.getEmail().split(".")[0]}`)
                     .set({
                         name: profile.getName(),
-                        email: profile.getEmail()
+                        email: profile.getEmail(),
+                        password: ""
                     })
                 }
                 database.ref(`Users/${profile.getEmail().split(".")[0]}`)
