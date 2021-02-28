@@ -49,9 +49,8 @@ const init = () => {
             case "#log-in":
                 main.appendChild(log_in());
                 document.getElementById("logar").addEventListener("click", () => {
-                    let email = document.getElementById("e-maila").value;
                     let senha = document.getElementById("senhaa").value;
-                
+                    let email = document.getElementById("e-maila").value;
                     database.ref("Users/").once("value").then(async function(db) {
                         Object.keys(db.val()).forEach((email_db) => {
                             if (email_db == email.split(".")[0]) {
@@ -95,6 +94,17 @@ const init = () => {
                         setTimeout(function () {document.querySelector("footer").style.color = footer_color; document.querySelector("footer").innerHTML = footer_content}, 10000)
                         return
                     })
+                })
+                let btn1 = document.getElementById("com_o_google")
+                btn1.addEventListener("change", function () {
+                    if (btn1.checked == true) {
+                        document.getElementById("senhaa").style.display = "none"
+                        document.getElementById("com_o_google2").style.display = "none"
+                        document.getElementById("senhaa").value = ""
+                      } else {
+                        document.getElementById("senhaa").style.display = "inline-block"
+                        document.getElementById("com_o_google2").style.display = "inline-block"
+                      }
                 })
                 break;
             case "#html":
