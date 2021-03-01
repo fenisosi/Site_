@@ -20,7 +20,7 @@ export default () => {
         <br>
     </div>
     <div class="col">
-        <textarea @keyup="save()" ref="textarea" placeholder="Insira o Conteudo Do Body" class="content">{{(active !== null) ? notes[active].content  : ''}}</textarea>
+        <textarea @keyup="save()" ref="textarea" placeholder="Insira o Conteúdo Do <body>" class="content">{{(active !== null) ? notes[active].content  : ''}}</textarea>
     </div>
     <iframe src="teste.html" id="CAGADA"></iframe>
     <br><br><br><br><br><br><br><br><br><br><br><br><br></div>

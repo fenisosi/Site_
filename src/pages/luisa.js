@@ -1,6 +1,6 @@
 export default () => {
     const container = document.createElement('div');
-    const txt = `Essa é a Aba Da Luisa Me Desculpem Por Talvez Não Ser Tão Bom Pois Não Sera Eu Que Modificarei O Conteudo <div class="luisa">`
+    const txt = `Essa é a Aba Da Luisa Me Desculpem Por Talvez Não Ser Tão Bom, Pois Não Sera Eu Que Modificarei O Conteúdo <div class="luisa">`
 
 
     const template = /*Aqui Começa*/`
