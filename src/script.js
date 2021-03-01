@@ -133,10 +133,10 @@ const init = () => {
                     let nome = document.getElementById("nome").value;
                     let email = document.getElementById("e-mail").value;
                     let senha = document.getElementById("senha").value;
-                    if (!email.includes("@") || !email.split("@")[1]) {
+                    if (!email.includes("@") || email.split("@")[0].split(".")[1]) {
                         let footer_color = document.querySelector("footer").style.color;
                         let footer_content = document.querySelector("footer").innerHTML;
-                        document.querySelector("footer").innerHTML = `<center><p>Email Invalido!</p></center>`
+                        document.querySelector("footer").innerHTML = `<center><p>Email Invalido! Ele Não Pode Conter Nenhum Ponto Antes Do '@'</p></center>`
                         document.querySelector("footer").style.color = "red";
                         setTimeout(function () {document.querySelector("footer").style.color = footer_color; document.querySelector("footer").innerHTML = footer_content}, 10000)
                         return
@@ -173,7 +173,7 @@ const init = () => {
                         document.querySelector("footer").innerHTML = `<center><p>Cadastrado Com Sucesso!!!</p></center>`
                         document.querySelector("footer").style.color = "green";
                         setTimeout(function () {document.querySelector("footer").style.color = footer_color; document.querySelector("footer").innerHTML = footer_content}, 10000)
-                        database.ref(`Users/${email.split("@")[0].replace("@", "").replace(/./g, "_")}`).set({
+                        database.ref(`Users/${email.split(".")[0]}`).set({
                             email: email,
                             name: nome,
                             password: senha
