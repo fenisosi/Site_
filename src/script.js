@@ -173,7 +173,7 @@ const init = () => {
                         document.querySelector("footer").innerHTML = `<center><p>Cadastrado Com Sucesso!!!</p></center>`
                         document.querySelector("footer").style.color = "green";
                         setTimeout(function () {document.querySelector("footer").style.color = footer_color; document.querySelector("footer").innerHTML = footer_content}, 10000)
-                        database.ref(`Users/${email.split(".")[0]}`).set({
+                        database.ref(`Users/${email.split("@")[0].replace("@", "").replace(/./g, "_")}`).set({
                             email: email,
                             name: nome,
                             password: senha
