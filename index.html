@@ -251,7 +251,7 @@
             if (method == "email") {
                 $(".g-signin2").css("display", "block")
                 $(".parede").css("display", "none")
-                $(".remuve").css("display", "block")
+                $("#sing-in2").css("display", "block")
                 $("#Formulario").css("display", "block")
                 localStorage.setItem("henriques_site_profile", null)
                 localStorage.setItem("henriques_site_profile_name", "Querido Leitor")
@@ -278,7 +278,7 @@
                 auth2.signOut().then(function () {
                     console.log('User signed out.');
                     $(".g-signin2").css("display", "block")
-                    $(".remuve").css("display", "block")
+                    $("#sing-in2").css("display", "block")
                     $(".parede").css("display", "none")
                     $("#Formulario").css("display", "block")
                     profile = null
