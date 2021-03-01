@@ -177,7 +177,7 @@
     <!--Main-->
     <a class="g-signin2 g-sing" data-onsuccess="onSignIn"></a>
     <p id="Formulario"><a href="/#sing-in"><button class="sing-in"><i class="far fa-address-card"></i> Login</button></a></p>
-    <a href="/#hub-log-in"><button id="sing-in2"><i class="far fa-address-book"></i> Hub De Log-in</button></a>
+    <a href="/#hub-log-in" class="remuve"><button id="sing-in2"><i class="far fa-address-book"></i> Hub De Log-in</button></a>
     <script>
         let profile;
         function onSignIn(googleUser) {
@@ -189,6 +189,7 @@
             $(".g-signin2").css("display", "none")
             $(".parede").css("display", "block")
             $("#Formulario").css("display", "none")
+            $("#sing-in2").css("display", "none")
             console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
             console.log('Name: ' + profile.getName().toLowerCase());
             console.log('Image URL: ' + profile.getImageUrl());
@@ -250,6 +251,7 @@
             if (method == "email") {
                 $(".g-signin2").css("display", "block")
                 $(".parede").css("display", "none")
+                $(".remuve").css("display", "block")
                 $("#Formulario").css("display", "block")
                 localStorage.setItem("henriques_site_profile", null)
                 localStorage.setItem("henriques_site_profile_name", "Querido Leitor")
@@ -276,6 +278,7 @@
                 auth2.signOut().then(function () {
                     console.log('User signed out.');
                     $(".g-signin2").css("display", "block")
+                    $(".remuve").css("display", "block")
                     $(".parede").css("display", "none")
                     $("#Formulario").css("display", "block")
                     profile = null

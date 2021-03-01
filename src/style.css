@@ -590,3 +590,6 @@ input[type="checkbox"] {
   input:checked[type="checkbox"]:before {
     left: 40px;
   }
+.remuve {
+    display: block;
+}

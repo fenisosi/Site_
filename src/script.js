@@ -68,6 +68,7 @@ const init = () => {
                                         localStorage.setItem("henriques_site_profile_email", db.val().email)
                                         $(".g-signin2").css("display", "none")
                                         $(".parede").css("display", "block")
+                                        $("#sing-in2").css("display", "none")
                                         $("#Formulario").css("display", "none")
                                         let hash = window.location.hash
                                         window.location.hash = "#null"
@@ -191,6 +192,7 @@ const init = () => {
                         cookies = localStorage.henriques_site;
                         $(".g-signin2").css("display", "none")
                         $(".parede").css("display", "block")
+                        $("#sing-in2").css("display", "none")
                         $("#Formulario").css("display", "none")
                         let hash = window.location.hash
                         window.location.hash = "#null"
