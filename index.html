@@ -264,12 +264,16 @@
                 let hash = window.location.hash
                 window.location.hash = "#null"
                 window.location.hash = hash
+                let popup = document.getElementsByClassName("popup")[0]
+                popup.innerHTML = `<center class="popup"><p class="popup">Thau! <br>(Por Favor Se Logue Novamente ( ͡ಠ ʖ̯ ͡ಠ))</p></center>`
+                popup.style.display = "block"
+                document.addEventListener("click", () => {
+                    popup.style.display = "none"
+                })
             } else if (method == "google") {
                 var auth2 = gapi.auth2.getAuthInstance();
                 auth2.signOut().then(function () {
                     console.log('User signed out.');
-                    var deslogar = confirm("Realmente Quer Deslogar?")
-                    if (!deslogar) return;
                     $(".g-signin2").css("display", "block")
                     $(".parede").css("display", "none")
                     $("#Formulario").css("display", "block")
