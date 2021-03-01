@@ -19,6 +19,7 @@ import editor from "./pages/editor.js"
 import contato from "./pages/contato.js"
 import sing_in from "./pages/sing-in.js"
 import log_in from "./pages/log-in.js"
+import hub_log_in from "./pages/hub-log-in.js"
 
 
 
@@ -45,6 +46,9 @@ const init = () => {
                 break;
             case "#aulas":
                 main.appendChild(aulas());
+                break;
+            case "#hub-log-in":
+                main.appendChild(hub_log_in());
                 break;
             case "#log-in":
                 main.appendChild(log_in());

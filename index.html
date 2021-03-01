@@ -175,8 +175,9 @@
     <div id="mudar"></div>
     <div class="body2" id="body2">
     <!--Main-->
-    <a class="g-signin2" data-onsuccess="onSignIn"></a>
-    <a href="/#sing-in" id="Formulario"><button class="sing-in"><i class="far fa-address-card"></i> Enter</button></a>
+    <a class="g-signin2 g-sing" data-onsuccess="onSignIn"></a>
+    <p id="Formulario"><a href="/#sing-in"><button class="sing-in"><i class="far fa-address-card"></i> Login</button></a></p>
+    <a href="/#hub-log-in"><button id="sing-in2"><i class="far fa-address-book"></i> Hub De Log-in</button></a>
     <script>
         let profile;
         function onSignIn(googleUser) {
