@@ -315,7 +315,7 @@
         <main id="root" class="root">
         </main>
         <?php
-            echo "uhul"
+            echo "uhul";
         ?>
         <div class="data teste popup"></div>
         <espaço-em-branco><br><br><br></espaço-em-branco>
