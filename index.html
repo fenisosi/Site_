@@ -192,15 +192,16 @@
         let profile;
         function onSignIn(googleUser) {
             profile = googleUser.getBasicProfile()
-            if (email.split("@")[0].split(".")[1]) {
-                let footer_color = document.querySelector("footer").style.color;
-                let footer_content = document.querySelector("footer").innerHTML;
-                document.querySelector("footer").innerHTML = `<center><p>Email Invalido! Ele Não Pode Conter Nenhum Ponto Antes Do '@'</p></center>`
-                document.querySelector("footer").style.color = "red";
-                setTimeout(function () {document.querySelector("footer").style.color = footer_color; document.querySelector("footer").innerHTML = footer_content}, 10000)
+            if (email.split(".")[1].split(".")[1]) {
                 var auth2 = gapi.auth2.getAuthInstance();
-                auth2.signOut()
-                return
+                auth2.signOut().then(function () {
+                    let footer_color = document.querySelector("footer").style.color;
+                    let footer_content = document.querySelector("footer").innerHTML;
+                    document.querySelector("footer").innerHTML = `<center><p>Email Invalido! Ele Não Pode Conter Nenhum Ponto Antes Do '@'</p></center>`
+                    document.querySelector("footer").style.color = "red";
+                    setTimeout(function () {document.querySelector("footer").style.color = footer_color; document.querySelector("footer").innerHTML = footer_content}, 10000)
+                    return
+                })
             }
             if (localStorage.perfil_henriques_site) {
                 localStorage.setItem("perfil_henriques_site", profile.getName())
