@@ -192,7 +192,7 @@
         let profile;
         function onSignIn(googleUser) {
             profile = googleUser.getBasicProfile()
-            if (email.split(".")[1].split(".")[1]) {
+            if (profile.getEmail().split("@")[0].split(".")[1]) {
                 var auth2 = gapi.auth2.getAuthInstance();
                 auth2.signOut().then(function () {
                     let footer_color = document.querySelector("footer").style.color;
