@@ -151,7 +151,9 @@ const init = () => {
                                                             }
                                                             talvez.forEach((valor, index) => {
                                                             if (db.val().userId == valor.split("-")[0].split("_")[1]) {
+                                                                main.innerHTML = ""
                                                                 main.appendChild(data(localStorage.henriques_site_profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!", db.val()?db.val().userId:"Não Cadastrado No Discord", db3.val()?db3.val().money:"Não Cadastrado No Discord", valor?valor.split("-")[1]:"Não Cadastrado No Discord", valor?valor.split("_")[0]:"Não Cadastrado No Discord"))
+                                                                console.log("1")
                                                             }
                                                         })
                                                     }
@@ -166,6 +168,8 @@ const init = () => {
                         })
                         return
                     } else {
+                        main.innerHTML = ""
+                        console.log("2")
                         main.appendChild(data(localStorage.henriques_site_profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!", "Não Cadastrado No Discord", "Não Cadastrado No Discord", "Não Cadastrado No Discord", "Não Cadastrado No Discord"))
                         return
                     }
@@ -401,7 +405,7 @@ document.querySelector("body").addEventListener("click", () => {
     
 })
 setInterval(function () {
-    if (!profile) {
+    if (localStorage.henriques_site_method != "deslogado") {
         return
     } else {
         $.notify("Logue-se Por Favor!!!", "error")
@@ -412,8 +416,9 @@ setInterval(function () {
     .then(res => {
         console.log(primeiro)
         var primeiro = res["data"][0]["sha"]
+        console.log(primeiro)
         console.log(`Vamos Atualizar A Pagina Agora? ${primeiro.toString() != document.querySelector("#mudar").innerHTML}`)
-        if (primeiro.toString() != document.querySelector("#mudar").innerHTML) {
+        if (primeiro.toString() != localStorage.henriques_site_git_version) {
             $.notify("Reiniciando Em 2 Minutos!", "warn")
             setTimeout(function () {
             if (localStorage.henriques_site) {

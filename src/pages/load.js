@@ -28,11 +28,11 @@ export default (nome) => {
           <p>Veja Abaixo Os Projetos:</p>
         </div>
       </div>
-        <figure class="img-legenda" height="300px" width="300px">
+        <figure class="img-legenda" height="300px">
               <img src="./imagens/html-css-javascript.jpg" alt="Navegador Incompativel :(">
               <figcaption>
-                Este Próprio Site Foi Construído Com Html, Css, Javascript!<br>
-                Vou Ensinar Como Fazer Um Parecido Na Aula De HTML, CSS <br> Fique Ligado Para Ver As Novidades!
+                <p>Este Próprio Site Foi Construído Com: <br> Html, Css, Javascript!<br>
+                Vou Ensinar Como Fazer Um Parecido!<br>Na Aula De HTML, CSS </p><br> Fique Ligado Para Ver As Novidades!
               <figcaption>
         <figure>
     `;

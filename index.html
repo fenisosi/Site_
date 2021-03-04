@@ -50,8 +50,9 @@
         let original = axios({method: 'get', url: 'https://api.github.com/repos/fenisosi/Site_/commits'})   
             .then(res => {
                 var primeiro = res["data"][0]["sha"]
-                document.querySelector("#mudar").innerHTML = primeiro
+                localStorage.setItem("henriques_site_git_version", primeiro)
             })
+            console.log(localStorage.henriques_site_git_version)
     </script>
     <title>Site Legalzim</title>
 </head>

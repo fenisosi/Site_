@@ -11,20 +11,20 @@ export default () => {
     const container = document.createElement('div');
 
 
-    const template = '\
-    <br><h1 class="aulas">Esta é a Pagina De Aulas</h1>\
-    <h2 class="materias">Materias:</h2>\
-    <p>\
-    <a href="/#html" >\
-        <picture class="pc">\
-            <img src="imagens/html.png" alt="Imagem Fexivel">\
-        </picture>\
-        <h style="color: #ffa500;margin-left: 30px;">HTML, CSS<h>\
-        <picture class="pc">\
-            <img src="imagens/css.png" alt="Imagem Fexivel" style="margin-left: 3px;">\
-        </picture>\
-    </a><bosta style="margin-left: 40px;">Descrição: Um Curso Básico De Html! Contendo Explicações e Códigos Básicos Prontos, Que Ira Ensinar a Fazer Um Site Semelhante.</bosta></p>\
-    ';
+    const template = `
+    <br><h1 class="aulas">Esta é a Pagina De Aulas</h1>
+    <h2 class="materias">Materias:</h2>
+    <a href="/#html" >
+        <picture class="pc">
+            <img src="imagens/html.png" alt="Imagem Fexivel">
+        </picture>
+        <h style="color: #ffa500;margin-left: 30px;">HTML, CSS<h>
+        <picture class="pc">
+            <img src="imagens/css.png" alt="Imagem Fexivel" style="margin-left: 3px;">
+        </picture>
+    </a>
+    <p>&nbspDescrição: Um Curso Básico De Html!<br> Contendo Explicações e Códigos Básicos,<br> Que Ira Ensinar a Fazer Um Site Semelhante.</p>\
+    `;
 
 
     container.innerHTML = template;

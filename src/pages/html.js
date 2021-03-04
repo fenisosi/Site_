@@ -21,7 +21,8 @@ export default () => {
 &lt/html&gt</pre></div>`
 
     const template = `
-        <h1>Ultra Básicos</h1>\
+    <p>
+        <h1>Ultra Básicos</h1>
     ${string}  
     <p>Se Tiver Vs Code Crie Um Documento Em Branco Html E Digite "!" Para Obter Um Resultado Semelhante!</p>
     <p>Caso Não Tenha Um Editor De Texto Clique <a href="/#editor">Aqui</a> Para Usar O Nosso!</p>
@@ -88,6 +89,7 @@ tag {
     <br>
     <br>
     <br>
+    </p>
     `;
 
     container.innerHTML = template;
