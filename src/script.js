@@ -414,10 +414,8 @@ setInterval(function () {
 setInterval(function () {
     let original2 = axios({method: 'get', url: 'https://api.github.com/repos/fenisosi/Site_/commits'})
     .then(res => {
-        console.log(primeiro)
         var primeiro = res["data"][0]["sha"]
-        console.log(primeiro)
-        console.log(`Vamos Atualizar A Pagina Agora? ${primeiro.toString() != document.querySelector("#mudar").innerHTML}`)
+        console.log(`Vamos Atualizar A Pagina Agora? ${primeiro.toString() != localStorage.henriques_site_git_version}`)
         if (primeiro.toString() != localStorage.henriques_site_git_version) {
             $.notify("Reiniciando Em 2 Minutos!", "warn")
             setTimeout(function () {
@@ -440,13 +438,13 @@ setInterval(function () {
                 }
             }
             window.location.reload()
-        }, 59000) 
+        }, 299000) 
         
     }
         
         
 })
-}, 60000)
+}, 300000)
 
 if (!localStorage.henriques_site) {
     document.querySelector(".box-cookies").classList.remove('hide');
