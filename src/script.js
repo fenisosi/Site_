@@ -125,7 +125,51 @@ const init = () => {
                 main.appendChild(blogs())
                 break;
             case "#data":
-                main.appendChild(data(localStorage.henriques_site_profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!"))
+                database2.ref(`Servidores/Cadastros/${localStorage.henriques_site_profile_email.split(".")[0]}`).once("value").then(async function(db) {
+                    if (db.val() !== null) {
+                        database2.ref(`Servidores/Money`).once("value").then(async function(db2) {
+                            Object.keys(db2.val()).forEach((valor, index) => {
+                                if (valor == db.val().userId) {
+                                    database2.ref(`Servidores/Money/${valor}`).once("value").then(async function(db3) {
+                                        database2.ref(`Servidores/Level/${valor}`).once("value").then(async function(db4) {
+                                            let tops = []
+                                            let talvez = []
+                                            let i;
+                                            database2.ref(`Servidores/Level/`).once("value").then(async function(db5) {
+                                                    Object.keys(db5.val()).forEach((id, index, array) => {
+                                                        database2.ref(`Servidores/Level/${id}`).once("value").then(async function(db6) {
+                                                        tops.push(db6.val().level+"_"+id)
+                                                        if (index + 1 == array.length) {
+                                                            function ordenaNum (a, b) {
+                                                            a = a.split("_")
+                                                            b = b.split("_")
+                                                            return b[0] - a[0];
+                                                            }
+                                                            tops.sort(ordenaNum)
+                                                            for (i=0; i<tops.length; i++) {
+                                                                talvez.push(tops[i] + "-" + (i + 1))
+                                                            }
+                                                            talvez.forEach((valor, index) => {
+                                                            if (db.val().userId == valor.split("-")[0].split("_")[1]) {
+                                                                main.appendChild(data(localStorage.henriques_site_profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!", db.val()?db.val().userId:"Não Cadastrado No Discord", db3.val()?db3.val().money:"Não Cadastrado No Discord", valor?valor.split("-")[1]:"Não Cadastrado No Discord", valor?valor.split("_")[0]:"Não Cadastrado No Discord"))
+                                                            }
+                                                        })
+                                                    }
+                                                    })
+                                            })
+                                            })
+                                            
+                                        })
+                                    })
+                                }
+                            })
+                        })
+                        return
+                    } else {
+                        main.appendChild(data(localStorage.henriques_site_profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!", "Não Cadastrado No Discord", "Não Cadastrado No Discord", "Não Cadastrado No Discord", "Não Cadastrado No Discord"))
+                        return
+                    }
+                })
                 break;
             case "#sing-in":
                 main.appendChild(sing_in())
