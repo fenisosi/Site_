@@ -424,7 +424,6 @@ a:hover {
     height: 50vh;
 }
 .img {
-    border: solid 8px whitesmoke;
     box-shadow: .2rem .4rem 7px rgba(0, 0, 0, 0.378);
     position: relative;
     transition: opacity 10s;
