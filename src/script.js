@@ -152,7 +152,7 @@ const init = () => {
                                                             talvez.forEach((valor, index) => {
                                                             if (db.val().userId == valor.split("-")[0].split("_")[1]) {
                                                                 main.innerHTML = ""
-                                                                main.appendChild(data(localStorage.henriques_site_profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!", db.val()?db.val().userId:"Não Cadastrado No Discord", db3.val()?db3.val().money:"Não Cadastrado No Discord", valor?valor.split("-")[1]:"Não Cadastrado No Discord", `#${valor?valor.split("_")[0]:"Não Cadastrado No Discord"}`))
+                                                                main.appendChild(data(localStorage.henriques_site_profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!", db.val()?db.val().userId:"Não Cadastrado No Discord", db3.val()?db3.val().money:"Não Cadastrado No Discord", `#${valor?valor.split("-")[1]:"Não Cadastrado No Discord"}`, `${valor?valor.split("_")[0]:"Não Cadastrado No Discord"}`))
                                                                 document.getElementById("votar").addEventListener("click", () => {
                                                                     if (parseInt(localStorage.henriques_site_cooldown) > Date.now()) {
                                                                         let footer_color = document.querySelector("footer").style.color;
