@@ -20,8 +20,12 @@ export default () => {
 &lt/body&gt
 &lt/html&gt</pre></div>`
 
-    const template = `
+    let template = `
     <p>
+    ESTa <br>
+    Pagina Não Esta <br>
+    Formatada Pois Não Consegui <br>
+    Formatar
         <h1>Ultra Básicos</h1>
     ${string}  
     <p>Se Tiver Vs Code Crie Um Documento Em Branco Html E Digite "!" Para Obter Um Resultado Semelhante!</p>
@@ -32,9 +36,9 @@ export default () => {
     <p>Hoje Irei Ensinar Como Hospedar Seu Site Primeiramente Abra o Site <a href="https://netlify.com">https://netlify.com</a> E Crie Uma Conta Apos Criar Sua Conta Crie Um Site Pelo Github E Va No seu Github E Crie Um Repositório VAZIO Vá No Seu Vscode Ou Editor De Texto Entre Pelo Terminal Na Pasta Do Projeto E Digite:<br>
     </p><div class="codego">git init<br>git clone <url_do_seu_github><br>git add * <br>git remote add main <url_do_seu_github> <br>git push -u main main</div>Isso Na Primeira Vez Da 2ª Em Diante Digite:<br>
     <div class="codego">git add * <br>git commit -am 'coisa que fez no commit' <br>git push</div> Pronto Seu Site Estara Online (Se Fez Tudo Corretamente)
-    CASO ALGO BUGE:
-    Entre No Site <a href="https://git-scm.com">https://git-scm.com</a> E Faça O Download Do Gitbash Provavelmente Por Isso Ele Não Funciona<br>
-    Caso Não Seja O GitBash Recomendo Usar O Vscode Pois Com Ele Você Se Loga No Github E Fica Mais Fácil De Usar O Gitbash Alem De Conter Varias Abreviações Que Seram Usadas Como Exemplo Aqui!<br> 
+    <p>CASO ALGO BUGE:</p>
+    <p>Entre No Site <a href="https://git-scm.com">https://git-scm.com</a> E Faça O Download Do Gitbash Provavelmente Por Isso Ele Não Funciona<br></p>
+    <p>Caso Não Seja O GitBash Recomendo Usar O Vscode Pois Com Ele Você Se Loga No Github E Fica Mais Fácil De Usar O Gitbash Alem De Conter Varias Abreviações Que Seram Usadas Como Exemplo Aqui!<br> </p>
     <br>
     <h1>Básicos</h1>
     <h2>Para Escrever Algo No Seu Site</h2>
@@ -91,6 +95,9 @@ tag {
     <br>
     </p>
     `;
+
+
+    template = "Desabilitada no Momento! :)"
 
     container.innerHTML = template;
 

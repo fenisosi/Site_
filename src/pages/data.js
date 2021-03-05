@@ -22,6 +22,9 @@ export default (nome, id, img, email, coocks, userId, money, rank, level) => {
             <center>Suas Moedas Do Meui6: ${money}</center>
             <center>Seu Level: ${level}</center>
             <center>Seu Rank: #${rank}</center>
+            <br>
+            <br>
+            <center><button id="votar">Votar</button></center>
             </div>
             `;
         } else {

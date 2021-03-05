@@ -153,6 +153,25 @@ const init = () => {
                                                             if (db.val().userId == valor.split("-")[0].split("_")[1]) {
                                                                 main.innerHTML = ""
                                                                 main.appendChild(data(localStorage.henriques_site_profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!", db.val()?db.val().userId:"Não Cadastrado No Discord", db3.val()?db3.val().money:"Não Cadastrado No Discord", valor?valor.split("-")[1]:"Não Cadastrado No Discord", valor?valor.split("_")[0]:"Não Cadastrado No Discord"))
+                                                                document.getElementById("votar").addEventListener("click", () => {
+                                                                    if (parseInt(localStorage.henriques_site_cooldown) > Date.now()) {
+                                                                        let footer_color = document.querySelector("footer").style.color;
+                                                                        let footer_content = document.querySelector("footer").innerHTML;
+                                                                        document.querySelector("footer").innerHTML = `<center><p>Você Já Votou Hoje! Espere ${Math.abs(parseInt(localStorage.henriques_site_cooldown) - Date.now()) / 60 / 60 / 1000} Horas</p></center>`
+                                                                        document.querySelector("footer").style.color = "red";
+                                                                        setTimeout(function () {document.querySelector("footer").style.color = footer_color; document.querySelector("footer").innerHTML = footer_content}, 10000)
+                                                                        return
+                                                                    } else {
+                                                                        database2.ref(`Servidores/Level/${valor.split("-")[0].split("_")[1]}`).set({
+                                                                            xp: db6.val().level * 50 + db6.val().xp,
+                                                                            level: db6.val().level
+                                                                        })
+                                                                        database2.ref(`Servidores/Money/${valor.split("-")[0].split("_")[1]}`).set({
+                                                                            money: db3.val().money + 500
+                                                                        })
+                                                                        localStorage.setItem("henriques_site_cooldown", (Date.now() + 43200000))
+                                                                    }
+                                                                })
                                                                 console.log("1")
                                                             }
                                                         })
@@ -171,6 +190,7 @@ const init = () => {
                         main.innerHTML = ""
                         console.log("2")
                         main.appendChild(data(localStorage.henriques_site_profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!", "Não Cadastrado No Discord", "Não Cadastrado No Discord", "Não Cadastrado No Discord", "Não Cadastrado No Discord"))
+                        document.getElementById("votar").style.display = "none"
                         return
                     }
                 })
