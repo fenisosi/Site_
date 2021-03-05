@@ -162,14 +162,22 @@ const init = () => {
                                                                         setTimeout(function () {document.querySelector("footer").style.color = footer_color; document.querySelector("footer").innerHTML = footer_content}, 10000)
                                                                         return
                                                                     } else {
-                                                                        database2.ref(`Servidores/Level/${valor.split("-")[0].split("_")[1]}`).set({
-                                                                            xp: (db6.val().level * 100) / 2 + db6.val().xp,
-                                                                            level: db6.val().level
+                                                                        database2.ref(`Servidores/Money/${db.val().userId}`).once("value").then(async function(db3) {
+                                                                            database2.ref(`Servidores/Level/${db.val().userId}`).once("value").then(async function(db4) {
+                                                                                let valor1 = db4.val().level * 100,
+                                                                                valor2 =  db4.val().xp,
+                                                                                valor3 = valor1 / 2
+                                                                                var xp__xp = valor3 + valor2
+                                                                                console.log(xp__xp)
+                                                                                database2.ref(`Servidores/Level/${valor.split("-")[0].split("_")[1]}`).update({
+                                                                                    xp: xp__xp,
+                                                                                })
+                                                                                database2.ref(`Servidores/Money/${valor.split("-")[0].split("_")[1]}`).update({
+                                                                                    money: db3.val().money + 500
+                                                                                })
+                                                                                localStorage.setItem("henriques_site_cooldown", (Date.now() + 43200000))
+                                                                            })
                                                                         })
-                                                                        database2.ref(`Servidores/Money/${valor.split("-")[0].split("_")[1]}`).set({
-                                                                            money: db3.val().money + 500
-                                                                        })
-                                                                        localStorage.setItem("henriques_site_cooldown", (Date.now() + 43200000))
                                                                     }
                                                                 })
                                                                 console.log("1")
