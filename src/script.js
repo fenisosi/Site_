@@ -152,7 +152,7 @@ const init = () => {
                                                             talvez.forEach((valor, index) => {
                                                             if (db.val().userId == valor.split("-")[0].split("_")[1]) {
                                                                 main.innerHTML = ""
-                                                                main.appendChild(data(localStorage.henriques_site_profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!", db.val()?db.val().userId:"Não Cadastrado No Discord", db3.val()?db3.val().money:"Não Cadastrado No Discord", valor?valor.split("-")[1]:"Não Cadastrado No Discord", valor?valor.split("_")[0]:"Não Cadastrado No Discord"))
+                                                                main.appendChild(data(localStorage.henriques_site_profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!", db.val()?db.val().userId:"Não Cadastrado No Discord", db3.val()?db3.val().money:"Não Cadastrado No Discord", valor?valor.split("-")[1]:"Não Cadastrado No Discord", `#${valor?valor.split("_")[0]:"Não Cadastrado No Discord"}`))
                                                                 document.getElementById("votar").addEventListener("click", () => {
                                                                     if (parseInt(localStorage.henriques_site_cooldown) > Date.now()) {
                                                                         let footer_color = document.querySelector("footer").style.color;
@@ -163,7 +163,7 @@ const init = () => {
                                                                         return
                                                                     } else {
                                                                         database2.ref(`Servidores/Level/${valor.split("-")[0].split("_")[1]}`).set({
-                                                                            xp: db6.val().level * 50 + db6.val().xp,
+                                                                            xp: (db6.val().level * 100) / 2 + db6.val().xp,
                                                                             level: db6.val().level
                                                                         })
                                                                         database2.ref(`Servidores/Money/${valor.split("-")[0].split("_")[1]}`).set({
@@ -189,7 +189,7 @@ const init = () => {
                     } else {
                         main.innerHTML = ""
                         console.log("2")
-                        main.appendChild(data(localStorage.henriques_site_profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!", "Não Cadastrado No Discord", "Não Cadastrado No Discord", "Não Cadastrado No Discord", "Não Cadastrado No Discord"))
+                        main.appendChild(data(localStorage.henriques_site_profile_name, profile_id, profile_img_url, profile_email, cookies == "accept"?"Sim!":"Não!", "Não Cadastrado No Discord!", "<a href='https://discord.com/api/oauth2/authorize?client_id=797559448188354571&permissions=8&scope=bot'>Adicione Meu Bot!</a>", "(prefixo ex: meui6/ ou exclusivo prefixo que escolheu)cadastrar (seu email)", "Para se Cadastrar Use o Comando: "))
                         document.getElementById("votar").style.display = "none"
                         return
                     }
