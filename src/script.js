@@ -40,6 +40,15 @@ const init = () => {
         profile_img_url = localStorage.henriques_site_profile_img_url;
         profile_email = localStorage.henriques_site_profile_email;
         cookies = localStorage.henriques_site;
+        if (localStorage.hash2 != "#log-in" && localStorage.hash2 != "#sing-in") {
+            localStorage.setItem("hash3", localStorage.hash2)
+        }
+        if (localStorage.hash1 != "#log-in" && localStorage.hash1 != "#sing-in") {
+            localStorage.setItem("hash2", localStorage.hash1)
+        }
+        if (window.location.hash != "#log-in" && window.location.hash != "#sing-in") {
+            localStorage.setItem("hash1", window.location.hash)
+        }
         switch(window.location.hash.split("?")[0]){
             case "":
                 main.appendChild(home(profile != null?profile_name.toLowerCase():"Querido Leitor"));
@@ -70,16 +79,14 @@ const init = () => {
                                         $(".parede").css("display", "block")
                                         $("#sing-in2").css("display", "none")
                                         $("#Formulario").css("display", "none")
-                                        let hash = window.location.hash
                                         window.location.hash = "#null"
-                                        window.location.hash = hash
+                                        window.location.hash = localStorage.hash1
                                         let popup = document.getElementsByClassName("popup")[0]
                                         popup.innerHTML = `<center class="popup"><p class="popup">Bem Vindo(a) De Volta ${db.val().name}</p></center>`
                                         popup.style.display = "block"
                                         document.addEventListener("click", () => {
                                             popup.style.display = "none"
                                         })
-                                        window.location.hash = ""
                                         return
                                     } else {
                                         let footer_color = document.querySelector("footer").style.color;
@@ -270,9 +277,8 @@ const init = () => {
                         $(".parede").css("display", "block")
                         $("#sing-in2").css("display", "none")
                         $("#Formulario").css("display", "none")
-                        let hash = window.location.hash
                         window.location.hash = "#null"
-                        window.location.hash = hash
+                        window.location.hash = localStorage.hash1
                         localStorage.setItem("henriques_site_usuario", true)
                         let popup = document.getElementsByClassName("popup")[0]
                         popup.innerHTML = `<center class="popup"><p class="popup">Bem Vindo(a) ${nome}</p></center>`
@@ -378,6 +384,7 @@ const init = () => {
 window.addEventListener("load", () => {
     main.appendChild(home(profile_name?profile_name.toLowerCase():"Querido Leitor"));
     window.location.hash = ""; 
+    localStorage.setItem("hash1", window.location.hash)
     init()
 });
 
