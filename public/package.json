@@ -1,0 +1,23 @@
+{
+  "name": "sites",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fenisosi/Site_.git"
+  },
+  "author": "Henrique Franchesco Rosario",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fenisosi/Site_/issues"
+  },
+  "homepage": "https://github.com/fenisosi/Site_#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
